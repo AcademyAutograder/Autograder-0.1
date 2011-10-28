@@ -1,0 +1,15 @@
+﻿Build started 10/21/2011 1:31:44 PM.
+     1>Project "C:\Users\Ben\Documents\Visual Studio 2010\Projects\Junior\GradingIO\Test\Test\Test.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Test.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Test.cpp
+         Test.cpp
+     1>c:\users\ben\documents\visual studio 2010\projects\junior\gradingio\test\test\test.cpp(6): warning C4007: 'WinMain' : must be '__stdcall'
+     1>c:\users\ben\documents\visual studio 2010\projects\junior\gradingio\test\test\test.cpp(6): error C2731: 'WinMain' : function cannot be overloaded
+                 c:\users\ben\documents\visual studio 2010\projects\junior\gradingio\test\test\test.cpp(2) : see declaration of 'WinMain'
+     1>Done Building Project "C:\Users\Ben\Documents\Visual Studio 2010\Projects\Junior\GradingIO\Test\Test\Test.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.96
