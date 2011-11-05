@@ -1,0 +1,4 @@
+0 Stinker
+5 Great
+-5 Stinker
+10 Great
