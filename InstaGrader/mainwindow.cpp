@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
     this->showMaximized();
-   QMenu
+   //QMenu
 }
 
 MainWindow::~MainWindow()
