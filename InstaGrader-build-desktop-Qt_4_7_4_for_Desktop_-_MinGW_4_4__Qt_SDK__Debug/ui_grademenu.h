@@ -1,7 +1,11 @@
 /********************************************************************************
 ** Form generated from reading UI file 'grademenu.ui'
 **
+<<<<<<< HEAD
+** Created: Mon Dec 19 12:54:12 2011
+=======
 ** Created: Sun Dec 18 18:36:07 2011
+>>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -30,12 +34,6 @@ class Ui_grademenu
 {
 public:
     QWidget *centralwidget;
-    QPushButton *opensave;
-    QPushButton *openhelp;
-    QPushButton *openopen;
-    QPushButton *openhome;
-    QPushButton *opengrade;
-    QPushButton *openoptions;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *openback;
@@ -60,51 +58,9 @@ public:
         grademenu->resize(477, 346);
         centralwidget = new QWidget(grademenu);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        opensave = new QPushButton(centralwidget);
-        opensave->setObjectName(QString::fromUtf8("opensave"));
-        opensave->setGeometry(QRect(0, 100, 75, 41));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/new/prefix1/Floppy Disk.png"), QSize(), QIcon::Normal, QIcon::Off);
-        opensave->setIcon(icon);
-        opensave->setIconSize(QSize(35, 35));
-        openhelp = new QPushButton(centralwidget);
-        openhelp->setObjectName(QString::fromUtf8("openhelp"));
-        openhelp->setGeometry(QRect(0, 250, 75, 41));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/new/prefix1/Question Mark.png"), QSize(), QIcon::Normal, QIcon::Off);
-        openhelp->setIcon(icon1);
-        openhelp->setIconSize(QSize(50, 50));
-        openopen = new QPushButton(centralwidget);
-        openopen->setObjectName(QString::fromUtf8("openopen"));
-        openopen->setGeometry(QRect(0, 50, 75, 41));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/new/prefix1/Folder.png"), QSize(), QIcon::Normal, QIcon::Off);
-        openopen->setIcon(icon2);
-        openopen->setIconSize(QSize(35, 35));
-        openhome = new QPushButton(centralwidget);
-        openhome->setObjectName(QString::fromUtf8("openhome"));
-        openhome->setGeometry(QRect(0, 0, 75, 41));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/new/prefix1/Home.png"), QSize(), QIcon::Normal, QIcon::Off);
-        openhome->setIcon(icon3);
-        openhome->setIconSize(QSize(45, 45));
-        opengrade = new QPushButton(centralwidget);
-        opengrade->setObjectName(QString::fromUtf8("opengrade"));
-        opengrade->setGeometry(QRect(0, 150, 75, 41));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/new/prefix1/A plus.png"), QSize(), QIcon::Normal, QIcon::Off);
-        opengrade->setIcon(icon4);
-        opengrade->setIconSize(QSize(70, 70));
-        openoptions = new QPushButton(centralwidget);
-        openoptions->setObjectName(QString::fromUtf8("openoptions"));
-        openoptions->setGeometry(QRect(0, 200, 75, 41));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/new/prefix1/Gear.png"), QSize(), QIcon::Normal, QIcon::Off);
-        openoptions->setIcon(icon5);
-        openoptions->setIconSize(QSize(40, 40));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(200, 230, 181, 25));
+        layoutWidget->setGeometry(QRect(260, 270, 181, 25));
         horizontalLayout_3 = new QHBoxLayout(layoutWidget);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -121,10 +77,10 @@ public:
 
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(133, 30, 271, 31));
+        label->setGeometry(QRect(20, 60, 91, 21));
         layoutWidget_2 = new QWidget(centralwidget);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(138, 160, 271, 25));
+        layoutWidget_2->setGeometry(QRect(120, 110, 321, 25));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -141,10 +97,10 @@ public:
 
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(140, 140, 261, 20));
+        label_2->setGeometry(QRect(20, 110, 91, 20));
         layoutWidget_3 = new QWidget(centralwidget);
         layoutWidget_3->setObjectName(QString::fromUtf8("layoutWidget_3"));
-        layoutWidget_3->setGeometry(QRect(133, 70, 271, 25));
+        layoutWidget_3->setGeometry(QRect(120, 60, 321, 25));
         horizontalLayout = new QHBoxLayout(layoutWidget_3);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -160,6 +116,13 @@ public:
         horizontalLayout->addWidget(cppselect);
 
         grademenu->setCentralWidget(centralwidget);
+        layoutWidget->raise();
+        label->raise();
+        layoutWidget_2->raise();
+        label_2->raise();
+        layoutWidget_3->raise();
+        lineEdit->raise();
+        cppselect->raise();
         menubar = new QMenuBar(grademenu);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 477, 21));
@@ -176,18 +139,11 @@ public:
     void retranslateUi(QMainWindow *grademenu)
     {
         grademenu->setWindowTitle(QApplication::translate("grademenu", "MainWindow", 0, QApplication::UnicodeUTF8));
-        opensave->setText(QString());
-        openhelp->setText(QString());
-        openopen->setText(QString());
-        openhome->setText(QString());
-        opengrade->setText(QString());
-        openoptions->setText(QString());
         openback->setText(QApplication::translate("grademenu", "Back", 0, QApplication::UnicodeUTF8));
         opengradebutton->setText(QApplication::translate("grademenu", "Grade", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("grademenu", "       Please select a folder containing the cpp files you \n"
-"                              would like to grade:", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("grademenu", ".cpp Source Folder", 0, QApplication::UnicodeUTF8));
         txtselect->setText(QApplication::translate("grademenu", "Browse", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("grademenu", "Then, select a text file containing the answers:", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("grademenu", "Testcase File (.txt)", 0, QApplication::UnicodeUTF8));
         cppselect->setText(QApplication::translate("grademenu", "Browse", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 

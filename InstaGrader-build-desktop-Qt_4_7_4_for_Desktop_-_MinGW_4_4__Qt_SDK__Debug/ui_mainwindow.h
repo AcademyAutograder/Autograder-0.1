@@ -1,7 +1,11 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
+<<<<<<< HEAD
+** Created: Mon Dec 19 12:46:17 2011
+=======
 ** Created: Sun Dec 18 18:36:07 2011
+>>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -15,11 +19,8 @@
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QHeaderView>
-#include <QtGui/QListView>
 #include <QtGui/QMainWindow>
-#include <QtGui/QPushButton>
 #include <QtGui/QStatusBar>
-#include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -34,6 +35,8 @@ public:
     QAction *actionOptions;
     QAction *actionHelp;
     QWidget *centralWidget;
+<<<<<<< HEAD
+=======
     QPushButton *homeopen;
     QPushButton *homehome;
     QPushButton *homehelp;
@@ -41,8 +44,8 @@ public:
     QPushButton *homeoptions;
     QPushButton *homesave;
     QListView *listView;
+>>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
     QStatusBar *statusBar;
-    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -81,6 +84,8 @@ public:
         actionHelp->setIcon(icon5);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+<<<<<<< HEAD
+=======
         homeopen = new QPushButton(centralWidget);
         homeopen->setObjectName(QString::fromUtf8("homeopen"));
         homeopen->setGeometry(QRect(0, 50, 75, 41));
@@ -119,15 +124,11 @@ public:
         listView->setGeometry(QRect(770, 0, 231, 581));
         listView->setMaximumSize(QSize(16777215, 751));
         listView->setLineWidth(0);
+>>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindow->setStatusBar(statusBar);
-        toolBar = new QToolBar(MainWindow);
-        toolBar->setObjectName(QString::fromUtf8("toolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
-
-        toolBar->addSeparator();
 
         retranslateUi(MainWindow);
 
@@ -161,6 +162,8 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionHelp->setToolTip(QApplication::translate("MainWindow", "help", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
+<<<<<<< HEAD
+=======
         homeopen->setText(QString());
         homehome->setText(QString());
         homehelp->setText(QString());
@@ -168,6 +171,7 @@ public:
         homeoptions->setText(QString());
         homesave->setText(QString());
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
+>>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
     } // retranslateUi
 
 };

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Wed Nov 16 18:21:05 2011
+** Created: Mon Dec 19 12:43:35 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -31,10 +31,10 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      12,   11,   11,   11, 0x08,
-      34,   11,   11,   11, 0x08,
-      56,   11,   11,   11, 0x08,
-      78,   11,   11,   11, 0x08,
+      12,   11,   11,   11, 0x0a,
+      34,   11,   11,   11, 0x0a,
+      56,   11,   11,   11, 0x0a,
+      78,   11,   11,   11, 0x0a,
 
        0        // eod
 };

@@ -14,7 +14,7 @@ grademenu::grademenu(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::grademenu)
 {
-    dir = "C:/Users/Ben/Autograder-0.1/InstaGrader/StudentFiles/";
+    //dir = "C:/Users/Ben/Autograder-0.1/InstaGrader/StudentFiles/";
     ui->setupUi(this);
     ui->lineEdit_2->hide();
     ui->txtselect->hide();
@@ -63,14 +63,16 @@ void grademenu::on_opengradebutton_clicked()
         ve[g-2].setName(dInter);
         dirs += fDir + "/" + dirName.at(g)+ " ";
     }
-    QString hComp = ("\"C:/Users/Ben/Autograder-0.1/InstaGrader/HiddenCompile.exe\"");
+    //QString hComp = ("\"C:/Users/Ben/Autograder-0.1/InstaGrader/HiddenCompile.exe\"");
+    QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " " + dirs + "\"";
     system(command.toStdString().c_str());
     QString f = fileName;
     for(int g = 0; g < ve.size(); g++)
         ve[g].execute(f);
     QMessageBox mes;
-    QString answers = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/Resources/answers.txt";
+    QString answers = "../MyQuizFiles/Quiz1/Resources/answers.txt";
+    //QString answers = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/Resources/answers.txt";
     ve[0].grade(answers);
     if(ve[0].getStatus())
          mes.setText("Pass");

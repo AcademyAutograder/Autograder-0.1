@@ -14,149 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="opensave">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>100</y>
-      <width>75</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="qtrealproj.qrc">
-      <normaloff>:/new/prefix1/Floppy Disk.png</normaloff>:/new/prefix1/Floppy Disk.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>35</width>
-      <height>35</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="openhelp">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>250</y>
-      <width>75</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="qtrealproj.qrc">
-      <normaloff>:/new/prefix1/Question Mark.png</normaloff>:/new/prefix1/Question Mark.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="openopen">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>50</y>
-      <width>75</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="qtrealproj.qrc">
-      <normaloff>:/new/prefix1/Folder.png</normaloff>:/new/prefix1/Folder.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>35</width>
-      <height>35</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="openhome">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>75</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="qtrealproj.qrc">
-      <normaloff>:/new/prefix1/Home.png</normaloff>:/new/prefix1/Home.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>45</width>
-      <height>45</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="opengrade">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>150</y>
-      <width>75</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="qtrealproj.qrc">
-      <normaloff>:/new/prefix1/A plus.png</normaloff>:/new/prefix1/A plus.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>70</width>
-      <height>70</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="openoptions">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>200</y>
-      <width>75</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="qtrealproj.qrc">
-      <normaloff>:/new/prefix1/Gear.png</normaloff>:/new/prefix1/Gear.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>40</width>
-      <height>40</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>230</y>
+      <x>260</x>
+      <y>270</y>
       <width>181</width>
       <height>25</height>
      </rect>
@@ -184,23 +46,22 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>133</x>
-      <y>30</y>
-      <width>271</width>
-      <height>31</height>
+      <x>20</x>
+      <y>60</y>
+      <width>91</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>       Please select a folder containing the cpp files you 
-                              would like to grade:</string>
+     <string>.cpp Source Folder</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>138</x>
-      <y>160</y>
-      <width>271</width>
+      <x>120</x>
+      <y>110</y>
+      <width>321</width>
       <height>25</height>
      </rect>
     </property>
@@ -224,22 +85,22 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>140</y>
-      <width>261</width>
+      <x>20</x>
+      <y>110</y>
+      <width>91</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Then, select a text file containing the answers:</string>
+     <string>Testcase File (.txt)</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>133</x>
-      <y>70</y>
-      <width>271</width>
+      <x>120</x>
+      <y>60</y>
+      <width>321</width>
       <height>25</height>
      </rect>
     </property>
@@ -259,6 +120,13 @@
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>label</zorder>
+   <zorder>layoutWidget_2</zorder>
+   <zorder>label_2</zorder>
+   <zorder>layoutWidget_3</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>cppselect</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -272,8 +140,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="qtrealproj.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
