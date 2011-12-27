@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFileDialog>
+#include "createnewquiz.h"
 
 namespace Ui {
 class MainWindow;
@@ -15,8 +17,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     
-private:
+private slots:
+    void on_actionNew_Quiz_triggered();
+
+private:///////////////////////////////////////////////////////////////////////////////////////////////////////
+
     Ui::MainWindow *ui;
+    CreateNewQuiz *one;
+    QStringListModel *model;
 };
 
 #endif // MAINWINDOW_H
