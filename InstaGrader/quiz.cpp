@@ -18,7 +18,8 @@ Quiz::Quiz(QString &fName)
 }
 void Quiz::compile()
 {
-    QString hComp = ("\"C:/Users/Ben/Autograder-0.1/InstaGrader/HiddenCompile.exe\"");
+    //QString hComp = ("\"C:/Users/Ben/Autograder-0.1/InstaGrader/HiddenCompile.exe\"");
+    QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " \"" + name + ".cpp\"\"";
     system(command.toStdString().c_str());
 }
@@ -26,7 +27,8 @@ void Quiz::execute(const QString &testCases)
 {
     QTime t;
     t.start();
-    QString ex = "\""+ name + ".exe<" + testCases + ">C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
+    //QString ex = "\""+ name + ".exe<" + testCases + ">C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
+    QString ex = "\""+ name + ".exe<" + testCases + ">../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
     system(ex.toStdString().c_str());
     this->runTime = t.elapsed();
 }
@@ -54,7 +56,8 @@ void StudentQuiz::grade(QString &anFileName)
 {
     QMessageBox g;
     QString ans,stud;
-    QString stFName = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt";
+    //QString stFName = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt";
+    QString stFName = "../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt";
     QFile anFile(anFileName);
     anFile.open(QIODevice::ReadOnly);
     QFile textFile(stFName);

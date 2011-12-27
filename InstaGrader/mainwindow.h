@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-private slots:
+public slots:
     void on_homeopen_clicked();
     void on_homehome_clicked();
 

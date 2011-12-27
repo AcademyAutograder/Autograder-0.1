@@ -13,7 +13,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
     this->showMaximized();
-   QMenu
+    QAction *quit = new QAction("&Quit",this);
+    QAction *newQuiz = new QAction("&New Quiz",this);
+
+    QMenu *file;
+    file = menuBar()->addMenu("&File");
+    file->addAction(newQuiz);
+    file -> addAction(quit);
+    connect(quit,SIGNAL(triggered()),qApp, SLOT(quit()));
+    connect(newQuiz,SIGNAL(triggered()),this,SLOT(on_homeopen_clicked()));
+
 }
 
 MainWindow::~MainWindow()

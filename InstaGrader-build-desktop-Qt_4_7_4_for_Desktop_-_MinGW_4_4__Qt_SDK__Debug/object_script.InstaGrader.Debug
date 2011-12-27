@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\dialog.o
+./debug\grademenu.o
+./debug\quiz.o
+./debug\student.o
+./debug\studentdb.o
+./debug\moc_mainwindow.o
+./debug\moc_dialog.o
+./debug\moc_grademenu.o
+./debug\qrc_qtrealproj.o
+);
