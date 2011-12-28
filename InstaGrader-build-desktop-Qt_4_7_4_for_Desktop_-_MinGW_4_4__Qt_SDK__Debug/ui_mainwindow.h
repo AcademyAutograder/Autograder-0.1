@@ -1,11 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-<<<<<<< HEAD
-** Created: Mon Dec 19 12:46:17 2011
-=======
-** Created: Sun Dec 18 18:36:07 2011
->>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
+** Created: Tue Dec 27 21:35:54 2011
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -35,16 +31,6 @@ public:
     QAction *actionOptions;
     QAction *actionHelp;
     QWidget *centralWidget;
-<<<<<<< HEAD
-=======
-    QPushButton *homeopen;
-    QPushButton *homehome;
-    QPushButton *homehelp;
-    QPushButton *homegrade;
-    QPushButton *homeoptions;
-    QPushButton *homesave;
-    QListView *listView;
->>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -84,47 +70,6 @@ public:
         actionHelp->setIcon(icon5);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-<<<<<<< HEAD
-=======
-        homeopen = new QPushButton(centralWidget);
-        homeopen->setObjectName(QString::fromUtf8("homeopen"));
-        homeopen->setGeometry(QRect(0, 50, 75, 41));
-        homeopen->setIcon(icon1);
-        homeopen->setIconSize(QSize(35, 35));
-        homehome = new QPushButton(centralWidget);
-        homehome->setObjectName(QString::fromUtf8("homehome"));
-        homehome->setGeometry(QRect(0, 0, 75, 41));
-        homehome->setIcon(icon);
-        homehome->setIconSize(QSize(45, 45));
-        homehelp = new QPushButton(centralWidget);
-        homehelp->setObjectName(QString::fromUtf8("homehelp"));
-        homehelp->setGeometry(QRect(0, 250, 75, 41));
-        homehelp->setIcon(icon5);
-        homehelp->setIconSize(QSize(50, 50));
-        homegrade = new QPushButton(centralWidget);
-        homegrade->setObjectName(QString::fromUtf8("homegrade"));
-        homegrade->setGeometry(QRect(0, 150, 75, 41));
-        homegrade->setIcon(icon3);
-        homegrade->setIconSize(QSize(70, 70));
-        homeoptions = new QPushButton(centralWidget);
-        homeoptions->setObjectName(QString::fromUtf8("homeoptions"));
-        homeoptions->setGeometry(QRect(0, 200, 75, 41));
-        homeoptions->setIcon(icon4);
-        homeoptions->setIconSize(QSize(40, 40));
-        homesave = new QPushButton(centralWidget);
-        homesave->setObjectName(QString::fromUtf8("homesave"));
-        homesave->setGeometry(QRect(0, 100, 75, 41));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/new/prefix1/Floppy Disk.png"), QSize(), QIcon::Normal, QIcon::Off);
-        homesave->setIcon(icon6);
-        homesave->setIconSize(QSize(35, 35));
-        listView = new QListView(centralWidget);
-        listView->setObjectName(QString::fromUtf8("listView"));
-        listView->setEnabled(true);
-        listView->setGeometry(QRect(770, 0, 231, 581));
-        listView->setMaximumSize(QSize(16777215, 751));
-        listView->setLineWidth(0);
->>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
@@ -162,16 +107,6 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionHelp->setToolTip(QApplication::translate("MainWindow", "help", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
-<<<<<<< HEAD
-=======
-        homeopen->setText(QString());
-        homehome->setText(QString());
-        homehelp->setText(QString());
-        homegrade->setText(QString());
-        homeoptions->setText(QString());
-        homesave->setText(QString());
-        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
->>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
     } // retranslateUi
 
 };
