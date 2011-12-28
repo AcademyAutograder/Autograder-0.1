@@ -1,11 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'grademenu.ui'
 **
-<<<<<<< HEAD
-** Created: Mon Dec 19 12:54:12 2011
-=======
-** Created: Sun Dec 18 18:36:07 2011
->>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
+** Created: Tue Dec 27 21:35:54 2011
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

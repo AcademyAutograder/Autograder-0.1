@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by Qt Creator 2.3.0, 2011-12-27T21:10:32. -->
-=======
-<<<<<<< HEAD
-<!-- Written by Qt Creator 2.4.0, 2011-12-27T15:31:49. -->
-=======
-<<<<<<< HEAD
-<!-- Written by Qt Creator 2.3.0, 2011-12-26T23:39:47. -->
-=======
-<!-- Written by Qt Creator 2.4.0, 2011-12-21T20:32:53. -->
->>>>>>> 90cd6d990315043acb03b81ff32de187ff8e673e
->>>>>>> 0069aa13be40cdbba787e6f2feff94ffaa909c59
->>>>>>> 67894a1025cabb9531a4a5ef676d48bd8cde81f4
+<!-- Written by Qt Creator 2.3.0, 2011-12-27T21:36:01. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -26,28 +14,63 @@
    <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.0">
     <value type="QString" key="language">Cpp</value>
     <valuemap type="QVariantMap" key="value">
-     <value type="QString" key="CurrentPreferences">CppGlobal</value>
+     <value type="bool" key="AlignAssignments">false</value>
+     <value type="QString" key="CurrentFallback">CppGlobal</value>
+     <value type="bool" key="ExtraPaddingForConditionsIfConfusingAlign">true</value>
+     <value type="bool" key="IndentAccessSpecifiers">false</value>
+     <value type="bool" key="IndentBlockBody">true</value>
+     <value type="bool" key="IndentBlockBraces">false</value>
+     <value type="bool" key="IndentBlocksRelativeToSwitchLabels">false</value>
+     <value type="bool" key="IndentClassBraces">false</value>
+     <value type="bool" key="IndentControlFlowRelativeToSwitchLabels">true</value>
+     <value type="bool" key="IndentDeclarationsRelativeToAccessSpecifiers">true</value>
+     <value type="bool" key="IndentEnumBraces">false</value>
+     <value type="bool" key="IndentFunctionBody">true</value>
+     <value type="bool" key="IndentFunctionBraces">false</value>
+     <value type="bool" key="IndentNamespaceBody">false</value>
+     <value type="bool" key="IndentNamespaceBraces">false</value>
+     <value type="bool" key="IndentStatementsRelativeToSwitchLabels">true</value>
+     <value type="bool" key="IndentSwitchLabels">false</value>
     </valuemap>
    </valuemap>
-   <valuemap type="QVariantMap" key="EditorConfiguration.CodeStyle.1">
-    <value type="QString" key="language">QmlJS</value>
-    <valuemap type="QVariantMap" key="value">
-     <value type="QString" key="CurrentPreferences">QmlJSGlobal</value>
-    </valuemap>
-   </valuemap>
-   <value type="int" key="EditorConfiguration.CodeStyle.Count">2</value>
+   <value type="int" key="EditorConfiguration.CodeStyle.Count">1</value>
    <value type="QByteArray" key="EditorConfiguration.Codec">System</value>
-<<<<<<< HEAD
    <value type="QString" key="EditorConfiguration.CurrentFallback">Project</value>
-=======
-   <value type="bool" key="EditorConfiguration.ConstrainTooltips">false</value>
->>>>>>> 67894a1025cabb9531a4a5ef676d48bd8cde81f4
    <value type="int" key="EditorConfiguration.IndentSize">4</value>
    <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
    <value type="int" key="EditorConfiguration.PaddingMode">1</value>
    <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
-   <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">0</value>
+   <value type="bool" key="EditorConfiguration.SmartBackspace">false</value>
    <value type="bool" key="EditorConfiguration.SpacesForTabs">true</value>
+   <valuemap type="QVariantMap" key="EditorConfiguration.Tab.0">
+    <value type="QString" key="language">Cpp</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="bool" key="AutoIndent">true</value>
+     <value type="bool" key="AutoSpacesForTabs">false</value>
+     <value type="QString" key="CurrentFallback">CppGlobal</value>
+     <value type="int" key="IndentSize">4</value>
+     <value type="int" key="PaddingMode">1</value>
+     <value type="bool" key="SmartBackspace">false</value>
+     <value type="bool" key="SpacesForTabs">true</value>
+     <value type="int" key="TabKeyBehavior">0</value>
+     <value type="int" key="TabSize">8</value>
+    </valuemap>
+   </valuemap>
+   <valuemap type="QVariantMap" key="EditorConfiguration.Tab.1">
+    <value type="QString" key="language">QmlJS</value>
+    <valuemap type="QVariantMap" key="value">
+     <value type="bool" key="AutoIndent">true</value>
+     <value type="bool" key="AutoSpacesForTabs">false</value>
+     <value type="QString" key="CurrentFallback">QmlJSGlobal</value>
+     <value type="int" key="IndentSize">4</value>
+     <value type="int" key="PaddingMode">1</value>
+     <value type="bool" key="SmartBackspace">false</value>
+     <value type="bool" key="SpacesForTabs">true</value>
+     <value type="int" key="TabKeyBehavior">0</value>
+     <value type="int" key="TabSize">8</value>
+    </valuemap>
+   </valuemap>
+   <value type="int" key="EditorConfiguration.Tab.Count">2</value>
    <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
    <value type="int" key="EditorConfiguration.TabSize">8</value>
    <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
@@ -57,10 +80,6 @@
    <value type="bool" key="EditorConfiguration.cleanWhitespace">true</value>
    <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
   </valuemap>
- </data>
- <data>
-  <variable>ProjectExplorer.Project.PluginSettings</variable>
-  <valuemap type="QVariantMap"/>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
@@ -117,7 +136,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory">C:/Users/udhaya/Autograder-0.1/InstaGrader-build-desktop-Qt_4_7_4_for_Desktop_-_MinGW_4_4__Qt_SDK__Debug</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory">C:/Users/Ben/Autograder-0.1/InstaGrader-build-desktop-Qt_4_7_4_for_Desktop_-_MinGW_4_4__Qt_SDK__Debug</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId">1</value>
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
@@ -167,7 +186,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory">C:/Users/udhaya/Autograder-0.1/InstaGrader-build-desktop-Qt_4_7_4_for_Desktop_-_MinGW_4_4__Qt_SDK__Release</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory">C:/Users/Ben/Autograder-0.1/InstaGrader-build-desktop-Qt_4_7_4_for_Desktop_-_MinGW_4_4__Qt_SDK__Release</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId">1</value>
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
@@ -272,7 +291,7 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.EnvironmentId</variable>
-  <value type="QString">{cb4b7369-fe8e-4464-bda5-0be630f7280c}</value>
+  <value type="QString">{faf082d1-4997-414c-baef-bddf30a395da}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
