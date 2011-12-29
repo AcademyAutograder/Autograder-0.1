@@ -2,19 +2,20 @@
 #include "ui_createnewquiz.h"
 #include <QFileDialog>
 #include <QStringListModel>
-
+#include <ui_mainwindow.h>
+#include "mainwindow.h"
 
 CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateNewQuiz)
 {
     ui->setupUi(this);
-    dir = "vfjaisdjfoijsdofij";
-    testcase = "vfjaisdjfoijsdofij";
-    ans = "vfjaisdjfoijsdofij";
+    dir = "notempty";  //Initialzized so that there won't be any checking of if file with blank name exists
+    testcase = "notempty"; //Initialzized so that there won't be any checking of if file with blank name exists
+    ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
 
 }
-QStringList CreateNewQuiz::dirName;///////////////////////////////////////////
+
 CreateNewQuiz::~CreateNewQuiz()
 {
     delete ui;
@@ -82,17 +83,11 @@ void CreateNewQuiz::on_ChooseAnswerlineedit_textChanged(const QString &arg1)
 
 void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
+   //  dir = "../Autograder-0.1/MyQuizFiles/Quiz1/StudentInput";    Here is where i tried to access a file i don;t know the whole extension of
     QDir directory(dir);
-   // QStringList dirName;/////////////////////////////////////////
-   // QStringListModel model;
-    //model = new QStringListModel(this);
+    model = new QStringListModel(this);
     dirName = directory.entryList();
-   // model.setStringList(dirName);
-    //ui -> Homestudentlist -> setModel(model);
-    //CreateNewQuiz::dirName = dirName;
-}
-
-QStringList CreateNewQuiz::sendlist()
-{
-    return dirName;
+    model->setStringList(dirName);
+    MainWindow &instance();
+    instance().ui->Homestudentlist->setModel(model);
 }

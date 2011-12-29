@@ -14,17 +14,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-    
+    friend MainWindow &instance();
+    Ui::MainWindow *ui;
+
 private slots:
     void on_actionNew_Quiz_triggered();
 
-private:///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    Ui::MainWindow *ui;
+private:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
     CreateNewQuiz *one;
-    QStringListModel *model;
+
 };
 
 #endif // MAINWINDOW_H

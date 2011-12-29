@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "createnewquiz.h"
 #include <QStringListModel>
-
+#include "ui_createnewquiz.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->showMaximized();
-    model = new QStringListModel (this);
 }
 
 MainWindow::~MainWindow()
@@ -20,16 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionNew_Quiz_triggered()
 {
-   // CreateNewQuiz *one;
     one = new CreateNewQuiz;
-  //  one->setParent(this);//////////////////////////////////////////////////////////////////// The frame just disapears
     one -> exec();
-    QStringList listcopy; //////////////////////////////
-    //one = new CreateNewQuiz;///////////////////////////////////////////////////////
-    listcopy = one->sendlist();//////////////////////////////
-
-    model->setStringList(listcopy);
-    ui -> Homestudentlist ->setModel(model);//////////////////////////////
-   // ui ->Homestudentlist->show();
 
 }

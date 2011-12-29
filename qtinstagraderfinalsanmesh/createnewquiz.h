@@ -17,8 +17,7 @@ class CreateNewQuiz : public QDialog
 public:
     explicit CreateNewQuiz(QWidget *parent = 0);
     ~CreateNewQuiz();
-    QStringList sendlist ();
-    static QStringList dirName; ///////////////////////////////////////////
+    Ui::CreateNewQuiz *ui;
     
 private slots:
     void on_CreateQuizCancelbutton_clicked();
@@ -38,13 +37,9 @@ private slots:
     void on_CreateQuizOkbutton_clicked();
 
 private:
-    Ui::CreateNewQuiz *ui;
     QString dir, testcase, ans;
-    QStringListModel model;
-
-
-
-
+    QStringList dirName;
+    QStringListModel *model;
 };
 
 #endif // CREATENEWQUIZ_H
