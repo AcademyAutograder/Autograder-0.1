@@ -1,9 +1,11 @@
 #include "createnewquiz.h"
 #include "ui_createnewquiz.h"
-#include <QFileDialog>
-#include <QStringListModel>
-#include <ui_mainwindow.h>
 #include "mainwindow.h"
+#include <ui_mainwindow.h>
+#include <QFileDialog>
+
+
+
 
 CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     QDialog(parent),
@@ -85,9 +87,9 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
    //  dir = "../Autograder-0.1/MyQuizFiles/Quiz1/StudentInput";    Here is where i tried to access a file i don;t know the whole extension of
     QDir directory(dir);
-    model = new QStringListModel(this);
+    dirmodel = new QStringListModel(this);
     dirName = directory.entryList();
-    model->setStringList(dirName);
+    dirmodel->setStringList(dirName);
     MainWindow &instance();
-    instance().ui->Homestudentlist->setModel(model);
+    instance().ui->Homestudentlist->setModel(dirmodel);
 }

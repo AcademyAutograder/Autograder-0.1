@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFileDialog>
 #include "createnewquiz.h"
+#include "editclass.h"
+#include "results.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,11 +21,16 @@ public:
 private slots:
     void on_actionNew_Quiz_triggered();
 
+    void on_actionEdit_class_triggered();
+
+    void on_Homeresultbutton_clicked();
+
 private:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     CreateNewQuiz *one;
-
+    EditClass *classedit;
+    Results *resultobj;
 };
 
 #endif // MAINWINDOW_H

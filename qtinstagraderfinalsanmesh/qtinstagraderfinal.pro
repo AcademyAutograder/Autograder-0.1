@@ -12,13 +12,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    createnewquiz.cpp
+    createnewquiz.cpp \
+    editclass.cpp \
+    results.cpp
 
 HEADERS  += mainwindow.h \
-    createnewquiz.h
+    createnewquiz.h \
+    editclass.h \
+    results.h
 
 FORMS    += mainwindow.ui \
-    createnewquiz.ui
+    createnewquiz.ui \
+    editclass.ui \
+    results.ui
 
 RESOURCES += \
     qtinstagraderfinal.qrc

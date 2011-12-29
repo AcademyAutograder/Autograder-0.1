@@ -2,8 +2,7 @@
 #define CREATENEWQUIZ_H
 
 #include <QDialog>
-//#include "mainwindow.h"
-#include <QStringListModel> ////////////////////////////////////////////////////////////////////////////
+#include <QStringListModel>
 
 
 namespace Ui {
@@ -39,7 +38,7 @@ private slots:
 private:
     QString dir, testcase, ans;
     QStringList dirName;
-    QStringListModel *model;
+    QStringListModel *dirmodel;
 };
 
 #endif // CREATENEWQUIZ_H
