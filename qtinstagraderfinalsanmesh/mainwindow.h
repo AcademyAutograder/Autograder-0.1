@@ -25,6 +25,8 @@ private slots:
 
     void on_Homeresultbutton_clicked();
 
+    void on_actionQuit_triggered();
+
 private:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();

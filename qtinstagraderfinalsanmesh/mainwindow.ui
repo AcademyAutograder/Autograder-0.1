@@ -153,6 +153,7 @@
     <addaction name="actionOpen_Quiz"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_2"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -247,6 +248,11 @@
   <action name="actionEdit_data">
    <property name="text">
     <string>Edit data</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>

@@ -16,9 +16,12 @@ class EditClass : public QDialog
 public:
     explicit EditClass(QWidget *parent = 0);
     ~EditClass();
-    static QStringListModel *nineclassmodel, *tenclassmodel, *elevenclassmodel, *twelveclassmodel;
-    static QStringList editclasslist;
+    QStringListModel *nineclassmodel, *tenclassmodel, *elevenclassmodel, *twelveclassmodel;
+    QStringList editclasslist;
     
+private slots:
+    void on_addstudbutton_clicked();
+
 private:
     Ui::EditClass *ui;
 
