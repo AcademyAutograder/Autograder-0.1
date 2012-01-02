@@ -1,5 +1,6 @@
 #Whenever QT creates a Debug folder, add it's directory to this list before committing.
 InstaGrader/InstaGrader.pro.user
+InstaGrader/InstaGrader.pro.user.1.3
 qtinstagraderfinalsanmesh/qtinstagraderfinal.pro.user
 SQLITETEST Yash/SQLITEQ/SQLITEQ.pro.user
 InstaGrader-build-desktop-Qt_4_7_4_for_Desktop_-_MinGW_4_4__Qt_SDK__Debug
