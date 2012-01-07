@@ -45,10 +45,18 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPlainTextEdit" name="HomeAnstxt"/>
+      <widget class="QPlainTextEdit" name="HomeAnstxt">
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="HomeStudentAnstxt"/>
+      <widget class="QPlainTextEdit" name="HomeStudentAnstxt">
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

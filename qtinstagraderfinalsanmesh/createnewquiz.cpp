@@ -3,7 +3,7 @@
 #include "mainwindow.h"
 #include <ui_mainwindow.h>
 #include <QFileDialog>
-
+#include <QTextStream>
 
 
 
@@ -16,7 +16,7 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     dir = "notempty";  //Initialzized so that there won't be any checking of if file with blank name exists
     testcase = "notempty"; //Initialzized so that there won't be any checking of if file with blank name exists
     ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
-
+    filemodel = new QFileSystemModel (this);
 }
 
 CreateNewQuiz::~CreateNewQuiz()
@@ -87,10 +87,17 @@ void CreateNewQuiz::on_ChooseAnswerlineedit_textChanged(const QString &arg1)
 void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
    //dir = "../Autograder-0.1/MyQuizFiles/Quiz1/StudentInput";    Here is where i tried to access a file i don;t know the whole extension of
-    QDir directory(dir);
-    dirmodel = new QStringListModel(this);
-    dirName = directory.entryList();
-    dirmodel->setStringList(dirName);
     MainWindow &instance();
-    instance().ui->Homestudentlist->setModel(dirmodel);
+
+    filemodel->setRootPath(dir);
+    instance().ui -> Homestudentlist ->setModel(filemodel);
+    instance().ui->Homestudentlist->setRootIndex(filemodel->index(dir));
+
+        QFile read(ans);
+        read.open(QIODevice::ReadOnly);
+        QTextStream in(&read);    // read the data serialized from the file
+        QString ansstr;
+        ansstr = in.readAll();
+        instance().ui->HomeAnstxt->setPlainText(ansstr);
+
 }

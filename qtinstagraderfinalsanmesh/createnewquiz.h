@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QStringListModel>
+#include <QFileSystemModel>
 
 
 namespace Ui {
@@ -17,6 +18,7 @@ public:
     explicit CreateNewQuiz(QWidget *parent = 0);
     ~CreateNewQuiz();
     Ui::CreateNewQuiz *ui;
+    QFileSystemModel *filemodel;
     
 private slots:
     void on_CreateQuizCancelbutton_clicked();
@@ -37,8 +39,7 @@ private slots:
 
 private:
     QString dir, testcase, ans;
-    QStringList dirName;
-    QStringListModel *dirmodel;
+
 };
 
 #endif // CREATENEWQUIZ_H
