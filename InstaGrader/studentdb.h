@@ -8,9 +8,10 @@
 class StudentDB
 {
 private:
-    QVector<Student> studentVector;
+
     int grade;
 public:
+    QVector<Student> studentVector;
     StudentDB(int);
     void newStudent(QString &);
     void deleteStudent(QString &);

@@ -1,30 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "grademenu.h"
-#include "ui_grademenu.h"
-#include <QFileDialog>
-#include <QProcess>
-#include <QMessageBox>
+#include "ui_createnewquiz.h"
+#include "ui_editclass.h"
+#include "ui_results.h"
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
     this->showMaximized();
-    QAction *quit = new QAction("&Quit",this);
-    QAction *newQuiz = new QAction("&New Quiz",this);
-
-    QMenu *file;
-    file = menuBar()->addMenu("&File");
-    file->addAction(newQuiz);
-    file -> addAction(quit);
-    connect(quit,SIGNAL(triggered()),qApp, SLOT(quit()));
-    connect(newQuiz,SIGNAL(triggered()),this,SLOT(on_homeopen_clicked()));
-
-   //QMenu
-
+    classedit = new EditClass;
 }
 
 MainWindow::~MainWindow()
@@ -32,31 +19,36 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_homeopen_clicked()
+void MainWindow::on_actionNew_Quiz_triggered()
 {
-    grademenu *one = new grademenu;
-    one -> show();
+    one = new CreateNewQuiz;
+    one -> exec();
 
 }
 
-void MainWindow::on_homehome_clicked()
+void MainWindow::on_actionEdit_class_triggered()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                     "",
-                                                    tr("Files (*.txt)"));
+    classedit -> exec();
 }
 
-
-void MainWindow::on_homehelp_clicked()
+void MainWindow::on_Homeresultbutton_clicked()
 {
-    QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-                                                    "/home",
-                                                    QFileDialog::ShowDirsOnly
-                                                    | QFileDialog::DontResolveSymlinks);
+    resultobj = new Results;
+    resultobj -> exec();
 }
 
-void MainWindow::on_homegrade_clicked()
+void MainWindow::on_actionQuit_triggered()
 {
-    grademenu *one = new grademenu;
-    one -> show();
+    close();
+}
+
+void MainWindow::on_Homestudentlist_activated(const QModelIndex &index)
+{
+    QFile read(one->filemodel->filePath(index));
+    read.open(QIODevice::ReadOnly);
+    QTextStream in(&read);    // read the data serialized from the file
+    QString ansstr;
+    ansstr = in.readAll();
+    ui->HomeStudentAnstxt->setPlainText(ansstr);
+
 }

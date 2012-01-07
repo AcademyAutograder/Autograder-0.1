@@ -12,28 +12,62 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialog.cpp \
-    grademenu.cpp \
     quiz.cpp \
     student.cpp \
     studentdb.cpp \
-    execthread.cpp
+    execthread.cpp \
+    results.cpp \
+    editclass.cpp \
+    createnewquiz.cpp \
+
 
 HEADERS  += mainwindow.h \
-    dialog.h \
-    grademenu.h \
     quiz.h \
     student.h \
     studentdb.h \
-    execthread.h
+    execthread.h \
+    results.h \
+    editclass.h \
+    createnewquiz.h
 
 FORMS    += \
     mainwindow.ui \
-    dialog.ui \
-    grademenu.ui
+    results.ui \
+    editclass.ui \
+    createnewquiz.ui \
+
 
 RESOURCES += \
-    qtrealproj.qrc
+    qtrealproj.qrc \
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
