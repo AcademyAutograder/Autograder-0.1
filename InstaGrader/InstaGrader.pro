@@ -16,14 +16,16 @@ SOURCES += main.cpp\
     grademenu.cpp \
     quiz.cpp \
     student.cpp \
-    studentdb.cpp
+    studentdb.cpp \
+    execthread.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \
     grademenu.h \
     quiz.h \
     student.h \
-    studentdb.h
+    studentdb.h \
+    execthread.h
 
 FORMS    += \
     mainwindow.ui \
@@ -32,6 +34,10 @@ FORMS    += \
 
 RESOURCES += \
     qtrealproj.qrc
+
+
+
+
 
 
 

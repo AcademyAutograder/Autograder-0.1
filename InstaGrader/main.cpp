@@ -3,7 +3,9 @@
 #include <quiz.h>
 #include <QMessageBox>
 #include "mainwindow.h"
+#include "studentdb.h"
 
+StudentDB dataBase(11);
 
 int main(int argc, char *argv[])
 {

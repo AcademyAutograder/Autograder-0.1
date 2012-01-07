@@ -50,7 +50,7 @@ void grademenu::on_txtselect_clicked()
 
 void grademenu::on_opengradebutton_clicked()
 {
-    QVector<StudentQuiz> ve(1);
+    QVector<StudentQuiz> ve;
     QString fDir = dir;
     QDir directory(fDir);
     QStringList dirName;
@@ -58,12 +58,16 @@ void grademenu::on_opengradebutton_clicked()
     dirName = directory.entryList();
     for(int g = 2; g < dirName.size(); g++)
     {
+
         QString dInter = dirName.at(g);
+
         dInter.chop(4);
-        ve[g-2].setName(dInter);
+        StudentQuiz sQInter(dInter);
+        ve.push_back(sQInter);
         dirs += fDir + "/" + dirName.at(g)+ " ";
     }
-    //QString hComp = ("\"C:/Users/Ben/Autograder-0.1/InstaGrader/HiddenCompile.exe\"");
+    //ve[0].compile();
+
     QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " " + dirs + "\"";
     system(command.toStdString().c_str());
@@ -72,13 +76,17 @@ void grademenu::on_opengradebutton_clicked()
         ve[g].execute(f);
     QMessageBox mes;
     QString answers = "../MyQuizFiles/Quiz1/Resources/answers.txt";
-    //QString answers = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/Resources/answers.txt";
-    ve[0].grade(answers);
-    if(ve[0].getStatus())
-         mes.setText("Pass");
-    else
-         mes.setText("Fail");
-    mes.exec();
+    for(int x = 0; x < ve.size(); x++)
+    {
+        QString timeHolder;
+        ve[x].grade(answers);
+        timeHolder.setNum(ve[x].getRunTime());
+        if(ve[x].getStatus())
+            mes.setText(ve[x].getName() + ": Pass : " + timeHolder + " seconds");
+        else
+            mes.setText(ve[x].getName() + ": Fail : " + timeHolder + " seconds");
+        mes.exec();
+    }
 
     close();
 }
