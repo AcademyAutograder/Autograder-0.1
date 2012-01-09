@@ -7,6 +7,7 @@
 #include <QTextStream>
 
 #include "quiz.h"
+#include "execthread.h"
 
 Quiz::Quiz()
 {
@@ -22,15 +23,38 @@ void Quiz::compile()
     QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " \"" + name + ".cpp\"\"";
     system(command.toStdString().c_str());
+
 }
 void Quiz::execute(const QString &testCases)
 {
     QTime t;
     t.start();
+    ExecThread thread;
+    thread.run(this->name,testCases);
+    while(thread.isRunning())
+    {
+        QMessageBox f;
+        if(t.elapsed() > 1000)
+        {
+
+            thread.exit();
+            QString killString = "taskkill /F /T /IM " + name + ".exe";
+            system(killString.toStdString().c_str());
+
+            f.setText("HANG");
+            f.exec();
+            break;
+        }
+        f.setText("GOT HERE");
+        f.exec();
+    }
     //QString ex = "\""+ name + ".exe<" + testCases + ">C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
-    QString ex = "\""+ name + ".exe<" + testCases + ">../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
-    system(ex.toStdString().c_str());
+    //QString ex = "\""+ name + ".exe<" + testCases + ">../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
+    //system(ex.toStdString().c_str());
+
+    thread.exit();
     this->runTime = t.elapsed();
+    this->runTime /= 1000;
 }
 QString Quiz::getName()
 {

@@ -13,7 +13,7 @@
 class StudentDB
 {
 private:
-    QVector<Student> studentVector;
+
     int grade;
     QStringList quizlist9;
     QStringList quizlist10;
@@ -21,6 +21,7 @@ private:
     QStringList quizlist12;
     int quizGrade;
 public:
+    QVector<Student> studentVector;
     StudentDB(int);
     void newStudent(QString &);
     void deleteStudent(QString &);

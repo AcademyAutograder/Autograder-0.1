@@ -6,91 +6,267 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>800</height>
+    <width>1381</width>
+    <height>735</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>InstaGrader</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <property name="windowIcon">
+   <iconset resource="qtinstagraderfinal.qrc">
+    <normaloff>:/new/prefix1/instagradercube.jpg</normaloff>:/new/prefix1/instagradercube.jpg</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>28</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QListView" name="Homestudentlist">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>10</y>
+      <width>311</width>
+      <height>621</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>931</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPlainTextEdit" name="HomeAnstxt">
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPlainTextEdit" name="HomeStudentAnstxt">
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="Homeresultbutton">
+    <property name="geometry">
+     <rect>
+      <x>1264</x>
+      <y>632</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Results</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>521</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="Homeanslabel">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="text">
+        <string>Answer</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>158</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="Homestudentlabel">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="text">
+        <string>Student</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionHome">
-   <property name="icon">
-    <iconset resource="qtrealproj.qrc">
-     <normaloff>:/new/prefix1/Home.png</normaloff>:/new/prefix1/Home.png</iconset>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1381</width>
+     <height>21</height>
+    </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Quiz"/>
+    <addaction name="actionOpen_Quiz"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_2"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionCopy"/>
+   </widget>
+   <widget class="QMenu" name="menuClass">
+    <property name="title">
+     <string>Class</string>
+    </property>
+    <addaction name="actionEdit_class"/>
+    <addaction name="actionAdd_new_testcase_ans"/>
+    <addaction name="actionOpen_class_records"/>
+   </widget>
+   <widget class="QMenu" name="menuQuiz">
+    <property name="title">
+     <string>Quiz</string>
+    </property>
+    <addaction name="actionEdit_data"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuClass"/>
+   <addaction name="menuQuiz"/>
+  </widget>
+  <action name="actionFile">
    <property name="text">
-    <string>home</string>
-   </property>
-   <property name="toolTip">
-    <string>go home</string>
+    <string>File</string>
    </property>
   </action>
-  <action name="actionOpen">
-   <property name="icon">
-    <iconset resource="qtrealproj.qrc">
-     <normaloff>:/new/prefix1/Folder.png</normaloff>:/new/prefix1/Folder.png</iconset>
-   </property>
+  <action name="actionEdit">
    <property name="text">
-    <string>open</string>
+    <string>Edit</string>
    </property>
-   <property name="toolTip">
-    <string>go to openui</string>
+  </action>
+  <action name="actionClass">
+   <property name="text">
+    <string>Class</string>
+   </property>
+  </action>
+  <action name="actionQuiz">
+   <property name="text">
+    <string>Quiz</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionNew_Quiz">
+   <property name="text">
+    <string>New Quiz</string>
+   </property>
+  </action>
+  <action name="actionOpen_Quiz">
+   <property name="text">
+    <string>Open Quiz</string>
    </property>
   </action>
   <action name="actionSave">
-   <property name="icon">
-    <iconset>
-     <normaloff>:/new/prefix1/Floppy Disk (2).png</normaloff>:/new/prefix1/Floppy Disk (2).png</iconset>
-   </property>
    <property name="text">
-    <string>save</string>
-   </property>
-   <property name="toolTip">
-    <string>savedoc</string>
+    <string>Save As</string>
    </property>
   </action>
-  <action name="actionGrade">
-   <property name="icon">
-    <iconset resource="qtrealproj.qrc">
-     <normaloff>:/new/prefix1/A plus.png</normaloff>:/new/prefix1/A plus.png</iconset>
-   </property>
+  <action name="actionCopy">
    <property name="text">
-    <string>grade</string>
-   </property>
-   <property name="toolTip">
-    <string>grade</string>
+    <string>Copy</string>
    </property>
   </action>
-  <action name="actionOptions">
-   <property name="icon">
-    <iconset resource="qtrealproj.qrc">
-     <normaloff>:/new/prefix1/Gear.png</normaloff>:/new/prefix1/Gear.png</iconset>
-   </property>
+  <action name="actionEdit_class">
    <property name="text">
-    <string>options</string>
-   </property>
-   <property name="toolTip">
-    <string>options</string>
+    <string>Edit class</string>
    </property>
   </action>
-  <action name="actionHelp">
-   <property name="icon">
-    <iconset resource="qtrealproj.qrc">
-     <normaloff>:/new/prefix1/Question Mark.png</normaloff>:/new/prefix1/Question Mark.png</iconset>
-   </property>
+  <action name="actionAdd_new_testcase_ans">
    <property name="text">
-    <string>help</string>
+    <string>add new testcase/ans</string>
    </property>
-   <property name="toolTip">
-    <string>help</string>
+  </action>
+  <action name="actionOpen_class_records">
+   <property name="text">
+    <string>Open class records</string>
+   </property>
+  </action>
+  <action name="actionSave_2">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionEdit_data">
+   <property name="text">
+    <string>Edit data</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="qtrealproj.qrc"/>
+  <include location="qtinstagraderfinal.qrc"/>
  </resources>
  <connections/>
 </ui>
