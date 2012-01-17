@@ -29,6 +29,8 @@ private slots:
 
     void on_deletestudbutton_clicked();
 
+    void on_savebutton_clicked();
+
 private:
     Ui::EditClass *ui;
     int modelnum;

@@ -1,5 +1,6 @@
 #include "editclass.h"
 #include "ui_editclass.h"
+#include <QMessageBox>
 
 
 //QStringList EditClass::editclasslist = (QStringList() << "");
@@ -39,6 +40,8 @@ EditClass::EditClass(QWidget *parent) :
     model[1]->setStringList(editclasslist);
     model[2]->setStringList(editclasslist);
     model[3]->setStringList(editclasslist);
+
+
 
     ui->editclasslistView->setModel(model[modelnum]);
     ui->editclasslistView->setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::DoubleClicked);
@@ -86,4 +89,12 @@ void EditClass::on_insertstudbutton_clicked()
 void EditClass::on_deletestudbutton_clicked()
 {
     model[modelnum]->removeRows(ui->editclasslistView->currentIndex().row(),1);
+}
+void EditClass::on_savebutton_clicked()
+{
+    QStringList flat;
+    flat = model[0]->stringList();
+    QMessageBox l;
+    l.setText(flat[0]);
+    l.exec();
 }

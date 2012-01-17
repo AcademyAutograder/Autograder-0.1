@@ -29,6 +29,8 @@ private slots:
 
     void on_Homestudentlist_activated(const QModelIndex &index);
 
+
+
 private:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
