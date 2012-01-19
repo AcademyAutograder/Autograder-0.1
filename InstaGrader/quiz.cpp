@@ -15,46 +15,32 @@ Quiz::Quiz()
 Quiz::Quiz(QString &fName)
 {
     name = fName;
-
 }
 void Quiz::compile()
 {
-    //QString hComp = ("\"C:/Users/Ben/Autograder-0.1/InstaGrader/HiddenCompile.exe\"");
     QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " \"" + name + ".cpp\"\"";
     system(command.toStdString().c_str());
-
 }
 void Quiz::execute(const QString &testCases)
 {
     QTime t;
+    QProcess exec;
+    exec.setStandardInputFile(testCases);
+    exec.setStandardOutputFile("../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt");
+
+    exec.start(name + ".exe");
+    if (!exec.waitForStarted())
+             return;
     t.start();
-    ExecThread thread;
-    thread.run(this->name,testCases);
-    while(thread.isRunning())
+
+    if (!exec.waitForFinished(1000))
+        this->runTime = -1;
+    else
     {
-        QMessageBox f;
-        if(t.elapsed() > 1000)
-        {
-
-            thread.exit();
-            QString killString = "taskkill /F /T /IM " + name + ".exe";
-            system(killString.toStdString().c_str());
-
-            f.setText("HANG");
-            f.exec();
-            break;
-        }
-        f.setText("GOT HERE");
-        f.exec();
+        runTime = t.elapsed();
+        runTime /= 1000;
     }
-    //QString ex = "\""+ name + ".exe<" + testCases + ">C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
-    //QString ex = "\""+ name + ".exe<" + testCases + ">../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt\"";
-    //system(ex.toStdString().c_str());
-
-    thread.exit();
-    this->runTime = t.elapsed();
-    this->runTime /= 1000;
 }
 QString Quiz::getName()
 {
@@ -80,7 +66,7 @@ void StudentQuiz::grade(QString &anFileName)
 {
     QMessageBox g;
     QString ans,stud;
-    //QString stFName = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt";
+
     QString stFName = "../MyQuizFiles/Quiz1/StudentOutput/" + name + ".txt";
     QFile anFile(anFileName);
     anFile.open(QIODevice::ReadOnly);
@@ -90,6 +76,8 @@ void StudentQuiz::grade(QString &anFileName)
     QTextStream in2(&anFile);
 
     bool mistake = 1;
+    if(in1.atEnd())
+        mistake = false;
     while(!in1.atEnd() && !in2.atEnd())
     {
         stud = in1.readLine(100);

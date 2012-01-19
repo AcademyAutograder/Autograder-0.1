@@ -12,10 +12,6 @@
 #include "quiz.h"
 #include "studentdb.h"
 
-
-
-
-
 CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateNewQuiz)
