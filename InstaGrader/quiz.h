@@ -31,6 +31,7 @@ public:
     void overrideStat();
     void grade(QString &);
     float getRunTime();
+    void setStatus(bool);
     QString getFailReason();
     ~StudentQuiz();
 };
