@@ -114,6 +114,11 @@ QString StudentQuiz::getFailReason()
 {
     return StudentQuiz::failReason;
 }
+void StudentQuiz::setStatus(bool s)
+{
+    status = s;
+}
+
 StudentQuiz::~StudentQuiz()
 {
     QString ex,ob;
