@@ -13,7 +13,7 @@
 class StudentDB
 {
 private:
-
+    QSqlDatabase db;
     int grade;
     QStringList quizlist9;
     QStringList quizlist10;
