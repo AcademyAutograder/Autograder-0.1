@@ -52,3 +52,5 @@ void MainWindow::on_Homestudentlist_activated(const QModelIndex &index)
     ui->HomeStudentAnstxt->setPlainText(ansstr);
 
 }
+
+
