@@ -5,7 +5,7 @@ StudentDB::StudentDB(int n)
     if(n == 9)
     {
     quizGrade = 9;
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("Grade9.db");
     if (db.open())
     {
@@ -105,12 +105,12 @@ void StudentDB::newStudent(QString &studentName)
 
             QString myquery = "INSERT INTO " + quizlist9.at(i) + " VALUES (?)";
             query.exec(myquery);
-            query.bindValue(0, qu.value(0).toString());
+            query.bindValue(0, studentName);
             QString quizRow = "UPDATE gradetable SET ";
             quizRow += quizlist9.at(i);
             quizRow += "='SELECT ";
             quizRow += studentName;
-            quizRow += "FROM " + quizName + "'";
+            quizRow += "FROM " + quizlist9.at(i) + "'";
             query.exec(quizRow);
         }
     }
@@ -121,13 +121,14 @@ void StudentDB::newStudent(QString &studentName)
 
             QString myquery = "INSERT INTO " + quizlist10.at(i) + " VALUES (?)";
             query.exec(myquery);
-            query.bindValue(0, qu.value(0).toString());
+            query.bindValue(0, studentName);
             QString quizRow = "UPDATE gradetable SET ";
             quizRow += quizlist10.at(i);
             quizRow += "='SELECT ";
             quizRow += studentName;
-            quizRow += "FROM " + quizName + "'";
+            quizRow += "FROM " + quizlist10.at(i) + "'";
             query.exec(quizRow);
+        }
     }
     if(quizGrade == 11)
     {
@@ -136,12 +137,12 @@ void StudentDB::newStudent(QString &studentName)
 
             QString myquery = "INSERT INTO " + quizlist11.at(i) + " VALUES (?)";
             query.exec(myquery);
-            query.bindValue(0, qu.value(0).toString());
+            query.bindValue(0, studentName);
             QString quizRow = "UPDATE gradetable SET ";
             quizRow += quizlist11.at(i);
             quizRow += "='SELECT ";
             quizRow += studentName;
-            quizRow += "FROM " + quizName + "'";
+            quizRow += "FROM " + quizlist11.at(i) + "' WHERE studentName= " + studentName;
             query.exec(quizRow);
         }
     }
@@ -152,12 +153,12 @@ void StudentDB::newStudent(QString &studentName)
 
             QString myquery = "INSERT INTO " + quizlist12.at(i) + " VALUES (?)";
             query.exec(myquery);
-            query.bindValue(0, qu.value(0).toString());
+            query.bindValue(0, studentName);
             QString quizRow = "UPDATE gradetable SET ";
             quizRow += quizlist12.at(i);
             quizRow += "='SELECT ";
             quizRow += studentName;
-            quizRow += "FROM " + quizName + "'";
+            quizRow += "FROM " + quizlist12.at(i) + "'";
             query.exec(quizRow);
         }
     }
@@ -426,7 +427,7 @@ void StudentDB::pullDB(int n)
 
 }
 
-void StudentDB::newQuiz(QString &quizName, QVector compileTimes, Qvector statuses)
+void StudentDB::newQuiz(QString &quizName, QVector<int> compileTimes, QVector<QString> statuses)
 {
     if(quizGrade == 9)
     {
@@ -448,7 +449,7 @@ void StudentDB::newQuiz(QString &quizName, QVector compileTimes, Qvector statuse
     QString query;
     QString quizMaker = "CREATE TABLE ";
     quizMaker += quizName;
-    quizMaker += "(studentname varchar(30), compiletime INT, status INT) IF NOT EXISTS";
+    quizMaker += "(studentname varchar(30), compiletime INT, status varchar(15)) IF NOT EXISTS";
     q.exec(quizMaker);
     q.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar (30)) IF NOT EXISTS");
     query = "ALTER TABLE gradetable ADD ";

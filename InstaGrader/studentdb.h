@@ -13,7 +13,7 @@
 class StudentDB
 {
 private:
-
+    QSqlDatabase db;
     int grade;
     QStringList quizlist9;
     QStringList quizlist10;
@@ -28,7 +28,7 @@ public:
     QStringList getNames();
     void pushDB(int);
     void pullDB(int);
-    void newQuiz(QString &, QVector, QVector);
+    void newQuiz(QString &, QVector<int>, QVector<QString>);
 
 
 };
