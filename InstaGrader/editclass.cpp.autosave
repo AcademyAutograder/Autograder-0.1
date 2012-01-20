@@ -46,9 +46,6 @@ EditClass::EditClass(QWidget *parent) :
     ui->editclasslistView->setModel(model[modelnum]);
     ui->editclasslistView->setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::DoubleClicked);
 
-    StudentDB database(9);
-    QString fname = "Sanmeshkumar", lname = "Udhayakumar";
-    database.generateID(fname,lname);
     // ui->gradecomboBox->
 }
 

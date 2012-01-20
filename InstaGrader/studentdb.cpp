@@ -486,3 +486,11 @@ bool StudentDB::studentExist(QString &studentName)
 }
 // void newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 // fill the database here
+QString StudentDB::generateID(QString &firstName,QString &lastName)
+{
+    firstName = firstName.toLower();
+    lastName = lastName.toLower();
+    QString userID = lastName + firstName[0];
+    qDebug() << userID;
+    return userID;
+}
