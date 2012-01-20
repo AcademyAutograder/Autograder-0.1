@@ -9,6 +9,8 @@
 #include "quiz.h"
 #include "execthread.h"
 
+#define CL "\"C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\bin\\cl.exe\""
+
 Quiz::Quiz()
 {
 }
@@ -16,11 +18,24 @@ Quiz::Quiz(QString &fName)
 {
     name = fName;
 }
-void Quiz::compile()
+void Quiz::compile(QString &cppFileName)
 {
+    /*
     QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " \"" + name + ".cpp\"\"";
     system(command.toStdString().c_str());
+    */
+    QProcess comp;
+    comp.setStandardOutputFile("compileOutput.txt");
+    QStringList f;
+    f << cppFileName;
+    QString compProg = "\"../InstaGrader/HiddenCompile.exe\"";
+    comp.start(compProg, f);
+    if (!comp.waitForStarted())
+             return;
+    if(!comp.waitForFinished())
+        return;
+
 }
 void Quiz::execute(const QString &testCases)
 {

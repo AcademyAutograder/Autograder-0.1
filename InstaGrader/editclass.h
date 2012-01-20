@@ -5,6 +5,8 @@
 #include <QStringListModel>
 
 
+
+
 namespace Ui {
 class EditClass;
 }
@@ -34,6 +36,8 @@ private slots:
 private:
     Ui::EditClass *ui;
     int modelnum;
+
+
 
 };
 

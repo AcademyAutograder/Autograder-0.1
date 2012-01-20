@@ -476,3 +476,13 @@ void StudentDB::newQuiz(QString &quizName, QVector<int> compileTimes, QVector<QS
         counter++;
     }
 }
+bool StudentDB::studentExist(QString &studentName)
+{
+    //Check if the student exists here
+    if(true)
+        return true;
+    else
+        return false;
+}
+// void newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
+// fill the database here

@@ -1,8 +1,8 @@
 #include "editclass.h"
 #include "ui_editclass.h"
 #include <QMessageBox>
-
-
+#include "student.h"
+#include "studentdb.h"
 //QStringList EditClass::editclasslist = (QStringList() << "");
 
 EditClass::EditClass(QWidget *parent) :
@@ -92,9 +92,18 @@ void EditClass::on_deletestudbutton_clicked()
 }
 void EditClass::on_savebutton_clicked()
 {
-    QStringList flat;
-    flat = model[0]->stringList();
-    QMessageBox l;
-    l.setText(flat[0]);
-    l.exec();
+    //Here goes the creating new student part. I don't know how to open the database though.
+    /*
+    StudentDB database(9);
+
+
+    for(int x = 0; x < model[0]->stringList().size(); x++)
+    {
+        QString stName = model[0]->stringList().at(x);
+        if(database.studentExist(stName))
+            database.newStudent(stName);
+    }
+    */
+
+
 }

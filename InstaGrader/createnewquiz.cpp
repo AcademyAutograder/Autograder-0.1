@@ -91,11 +91,10 @@ void CreateNewQuiz::on_ChooseAnswerlineedit_textChanged(const QString &arg1)
 
 void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
-    StudentDB mainDB(11);
-   //dir = "../Autograder-0.1/MyQuizFiles/Quiz1/StudentInput";    Here is where i tried to access a file i don;t know the whole extension of
+    //StudentDB mainDB(11);
+    // Need to acquire database number somehow
     MainWindow &instance();
     QString dir1 = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput";
-
 
     QFile read(ans);
     read.open(QIODevice::ReadOnly);
@@ -103,7 +102,6 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     QString ansstr;
     ansstr = in.readAll();
 
- //
     QVector<StudentQuiz> ve;
     QString fDir = dir;
     QDir directory(fDir);
@@ -119,20 +117,25 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         StudentQuiz sQInter(dInter);
         ve.push_back(sQInter);
         dirs += fDir + "/" + dirName.at(g)+ " ";
-    }
-    //ve[0].compile();
+    }   
 
+/*
+    ***Old Compile Method***
     QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
     QString command = "\"" + hComp + " " + dirs + "\"";
     system(command.toStdString().c_str());
-   // QString f = testcase;
-    for(int g = 0; g < ve.size(); g++)
-        ve[g].execute(testcase);
+*/
+
+    for(int x = 0; x < ve.size(); x++)
+    {
+        QString compFile = fDir + "/" + dirName[x+2];
+        ve[x].compile(compFile);
+    }
     QMessageBox mes;
-    //QString answers = "../MyQuizFiles/Quiz1/Resources/answers.txt";
     for(int x = 0; x < ve.size(); x++)
     {
         QString timeHolder;
+        ve[x].execute(testcase);
         ve[x].grade(ans);
         timeHolder.setNum(ve[x].getRunTime());
         if(ve[x].getStatus())
@@ -140,16 +143,14 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         else
             mes.setText(ve[x].getName() + ": Fail : " + timeHolder + " seconds");
         mes.exec();
+        // newQuiz(quizName, ve);
     }
 
-
-   //
 
     filemodel->setRootPath(dir1);
     instance().ui -> Homestudentlist ->setModel(filemodel);
     instance().ui->Homestudentlist->setRootIndex(filemodel->index(dir1));
     instance().ui->HomeAnstxt->setPlainText(ansstr);
     close();
-
 
 }

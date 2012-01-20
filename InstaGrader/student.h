@@ -10,6 +10,7 @@ class Student
 private:
     QString studentName;
     QString studentID;
+    // we don't even need quiz vector here.
     QVector <StudentQuiz> quizVector;
 
 public:

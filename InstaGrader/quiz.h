@@ -13,7 +13,7 @@ protected:
 public:
     Quiz();
     Quiz(QString &);
-    void compile();
+    void compile(QString &cppFileName);
     void execute(const QString &) ;
     QString getName();
     void setName(const QString &);

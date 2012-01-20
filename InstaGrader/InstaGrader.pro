@@ -16,7 +16,6 @@ SOURCES += main.cpp\
     quiz.cpp \
     student.cpp \
     studentdb.cpp \
-    execthread.cpp \
     results.cpp \
     editclass.cpp \
     createnewquiz.cpp \
@@ -26,7 +25,6 @@ HEADERS  += mainwindow.h \
     quiz.h \
     student.h \
     studentdb.h \
-    execthread.h \
     results.h \
     editclass.h \
     createnewquiz.h
@@ -40,6 +38,8 @@ FORMS    += \
 
 RESOURCES += \
     qtrealproj.qrc \
+
+
 
 
 

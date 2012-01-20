@@ -9,6 +9,7 @@
 #include <QtSql/QSqlRecord>
 #include <QVariant>
 #include <QDebug>
+#include "quiz.h"
 
 class StudentDB
 {
@@ -29,6 +30,8 @@ public:
     void pushDB(int);
     void pullDB(int);
     void newQuiz(QString &, QVector<int>, QVector<QString>);
+    // void newQuiz(QString, QVector<StudentQuiz>)
+    bool studentExist(QString &);
 
 
 };
