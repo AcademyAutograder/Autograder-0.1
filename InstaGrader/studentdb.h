@@ -28,8 +28,11 @@ public:
     void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
+<<<<<<< HEAD
     //void pushDB(int);
     //void pullDB(int);
+=======
+>>>>>>> 23cad37b229bf85d6958100bb8bb3a508a75f63a
     //void newQuiz(QString &, QVector<int>, QVector<QString>);
     void newQuiz(QString, QVector<StudentQuiz>);
     bool studentExist(QString &);
