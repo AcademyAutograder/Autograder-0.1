@@ -25,18 +25,17 @@ public:
     QVector<Student> studentVector;
     StudentDB();
     void openDB(int);
-    void newStudent(QString &);
+    void newStudent(QString &, QString &id);
     void deleteStudent(QString &);
     QStringList getNames();
-<<<<<<< HEAD
+
     //void pushDB(int);
     //void pullDB(int);
-=======
->>>>>>> 23cad37b229bf85d6958100bb8bb3a508a75f63a
+    QString generateID(QString &, QString &);
     //void newQuiz(QString &, QVector<int>, QVector<QString>);
     void newQuiz(QString, QVector<StudentQuiz>);
     bool studentExist(QString &);
-    //void closeDB();
+    void closeDB();
 
 
 

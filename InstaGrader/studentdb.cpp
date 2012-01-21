@@ -94,7 +94,7 @@ void StudentDB::openDB(int n)
     q.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar (30)");
     //return true;
 }
-void StudentDB::newStudent(QString &studentName, QString id)
+void StudentDB::newStudent(QString &studentName, QString &id)
 {
 
     //QString id = lastname;
@@ -107,16 +107,6 @@ void StudentDB::newStudent(QString &studentName, QString id)
     if(query.exec(insert))
         qDebug() << "Inserted";
 
-<<<<<<< HEAD
-    if(query.exec("SELECT studentname FROM gradetable"))
-        qDebug() << "Selected";
-    /*while(query.next())
-    {
-        qDebug() << "Looped";
-        qDebug() << query.value(0).toString();
-    }*/
-=======
->>>>>>> 23cad37b229bf85d6958100bb8bb3a508a75f63a
 }
 
 void StudentDB::deleteStudent(QString &studentName)
@@ -143,12 +133,6 @@ QStringList StudentDB::getNames()
     }
     return studentList;
 }
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 23cad37b229bf85d6958100bb8bb3a508a75f63a
 bool StudentDB::studentExist(QString &studentName)
 {
     bool exist;
@@ -168,9 +152,7 @@ bool StudentDB::studentExist(QString &studentName)
 void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 {
     QSqlQuery q;
-<<<<<<< HEAD
     QString addColumns = "UPDATE gradetable " + quizName ;
-=======
     QString makeComp = "ALTER TABLE gradetable ADD " + quizName + "CompileTime REAL";
     if(q.exec(makeComp))
         qDebug() << "Made Comp";
@@ -188,7 +170,7 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
         qDebug() << "SetDefaults";
     for (int i =0; i < quizVector.size(); i++)
     {
-        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector.at(i).getRunTime() + ", " + quizName + "Status='" + quizVector.at(i).getStatus() + "', " + quizName +"Reason='" + quizVector.at(i).getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector.at(i).getTimeString() +"' WHERE studentname='" + quizVector.at(i).getStudentName() +"'";
+        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector[i].getRunTime() + ", " + quizName + "Status='" + quizVector.at(i).getStatus() + "', " + quizName +"Reason='" + quizVector.at(i).getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector.at(i).getTimeString() +"' WHERE studentname='" + quizVector.at(i).getStudentName() +"'";
         if(q.exec(updateStudent))
             qDebug() << "Set Student " << quizVector.at(i).getStudentName();
     }
@@ -202,7 +184,6 @@ QString StudentDB::generateID(QString &firstName,QString &lastName)
     QString userID = lastName + firstName[0];
     qDebug() << userID;
     return userID;
->>>>>>> 23cad37b229bf85d6958100bb8bb3a508a75f63a
 }
 void StudentDB::closeDB()
 {
