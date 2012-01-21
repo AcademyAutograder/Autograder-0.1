@@ -151,6 +151,15 @@ uint StudentQuiz::getTimeInt()
 {
     return timeOfDelivery.toTime_t();
 }
+void setRank(int r)
+{
+    rank = r;
+}
+
+int getRank()
+{
+    return rank;
+}
 
 StudentQuiz::~StudentQuiz()
 {

@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QFile>
+#include <QDateTime>
 
 
 class Quiz
@@ -23,7 +24,9 @@ class StudentQuiz : public Quiz
 {
 protected:
     bool status;
+    QDateTime timeOfDelivery;
     QString failReason;
+    int rank;
 public:
     StudentQuiz ();
     StudentQuiz(QString &);
@@ -33,6 +36,12 @@ public:
     float getRunTime();
     void setStatus(bool);
     QString getFailReason();
+    QDateTime getTOD();
+    QString getTimeString();
+    uint getTimeInt();
+    void setTOD(QDateTime);
+    void setRank(int);
+    int getRank();
     ~StudentQuiz();
 };
 

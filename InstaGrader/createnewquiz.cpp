@@ -107,9 +107,10 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     QString fDir = dir;
     QDir directory(fDir);
     QFileInfoList fileInfo = directory.entryInfoList();
-    qDebug() << fileInfo.at(2).lastModified().toString();
+
     QStringList dirName;
     QString dirs;
+    QVector times;
     dirName = directory.entryList();
     for(int g = 2; g < dirName.size(); g++)
     {
@@ -119,6 +120,8 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 
         dInter.chop(4);
         StudentQuiz sQInter(dInter);
+        sQInter.setTOD(fileInfo.at(g).lastModified());
+        //times += sQInter.getTimeInt();
         ve.push_back(sQInter);
         dirs += fDir + "/" + dirName.at(g)+ " ";
     }   
