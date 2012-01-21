@@ -11,6 +11,7 @@
 #include <vector>
 #include "quiz.h"
 #include "studentdb.h"
+#include <QDateTime>
 
 CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     QDialog(parent),
@@ -105,11 +106,14 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     QVector<StudentQuiz> ve;
     QString fDir = dir;
     QDir directory(fDir);
+    QFileInfoList fileInfo = directory.entryInfoList();
+    qDebug() << fileInfo.at(2).lastModified().toString();
     QStringList dirName;
     QString dirs;
     dirName = directory.entryList();
     for(int g = 2; g < dirName.size(); g++)
     {
+
 
         QString dInter = dirName.at(g);
 
