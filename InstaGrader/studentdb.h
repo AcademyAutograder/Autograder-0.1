@@ -28,13 +28,12 @@ public:
     void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
-    void pushDB(int);
-    void pullDB(int);
+    //void pushDB(int);
+    //void pullDB(int);
     //void newQuiz(QString &, QVector<int>, QVector<QString>);
     void newQuiz(QString, QVector<StudentQuiz>);
     bool studentExist(QString &);
-    void closeDB();
-    QString generateID(QString &,QString &);
+    //void closeDB();
 
 
 

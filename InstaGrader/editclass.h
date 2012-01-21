@@ -22,6 +22,7 @@ public:
     //QStringListModel *nineclassmodel, *tenclassmodel, *elevenclassmodel, *twelveclassmodel;
     QStringListModel *model[4];
     QStringList editclasslist;
+
     
 private slots:
     void on_addstudbutton_clicked();
@@ -38,6 +39,7 @@ private:
     Ui::EditClass *ui;
     int modelnum;
     StudentDB database;
+
 
 
 

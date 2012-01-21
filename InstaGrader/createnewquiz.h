@@ -37,8 +37,10 @@ private slots:
 
     void on_CreateQuizOkbutton_clicked();
 
+    void on_EnterNamelineedit_textEdited(const QString &arg1);
+
 private:
-    QString dir, testcase, ans;
+    QString dir, testcase, ans, quizName;
 
 };
 

@@ -92,6 +92,9 @@ void CreateNewQuiz::on_ChooseAnswerlineedit_textChanged(const QString &arg1)
 
 void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
+
+    qDebug() << quizName;
+
     //StudentDB mainDB(11);
     // Need to acquire database number somehow
     MainWindow &instance();
@@ -110,7 +113,6 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 
     QStringList dirName;
     QString dirs;
-    //QVector times;
     dirName = directory.entryList();
     for(int g = 2; g < dirName.size(); g++)
     {
@@ -121,7 +123,6 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         dInter.chop(4);
         StudentQuiz sQInter(dInter);
         sQInter.setTOD(fileInfo.at(g).lastModified());
-        //times += sQInter.getTimeInt();
         ve.push_back(sQInter);
         dirs += fDir + "/" + dirName.at(g)+ " ";
     }   
@@ -160,4 +161,9 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     instance().ui->HomeAnstxt->setPlainText(ansstr);
     close();
 
+}
+
+void CreateNewQuiz::on_EnterNamelineedit_textEdited(const QString &arg1)
+{
+    quizName = arg1;
 }
