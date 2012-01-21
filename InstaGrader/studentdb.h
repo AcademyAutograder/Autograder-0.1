@@ -23,16 +23,19 @@ private:
     int quizGrade;
 public:
     QVector<Student> studentVector;
-    StudentDB(int);
+    StudentDB();
+    void openDB(int);
     void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
     void pushDB(int);
     void pullDB(int);
-    void newQuiz(QString &, QVector<int>, QVector<QString>);
-    // void newQuiz(QString, QVector<StudentQuiz>)
+    //void newQuiz(QString &, QVector<int>, QVector<QString>);
+    void newQuiz(QString, QVector<StudentQuiz>);
     bool studentExist(QString &);
+    void closeDB();
     QString generateID(QString &,QString &);
+
 
 
 };

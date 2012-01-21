@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QStringListModel>
+#include "studentdb.h"
 
 
 
@@ -36,6 +37,7 @@ private slots:
 private:
     Ui::EditClass *ui;
     int modelnum;
+    StudentDB database;
 
 
 

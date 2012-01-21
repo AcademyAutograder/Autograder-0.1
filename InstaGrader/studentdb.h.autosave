@@ -9,11 +9,12 @@
 #include <QtSql/QSqlRecord>
 #include <QVariant>
 #include <QDebug>
+#include "quiz.h"
 
 class StudentDB
 {
 private:
-
+    QSqlDatabase db;
     int grade;
     QStringList quizlist9;
     QStringList quizlist10;
@@ -22,13 +23,18 @@ private:
     int quizGrade;
 public:
     QVector<Student> studentVector;
-    StudentDB(int);
+    StudentDB();
+    void openDB(int);
     void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
-    void pushDB(int);
-    void pullDB(int);
-    void newQuiz(QString &, QVector<int>, QVector<string>);
+    //void pushDB(int);
+    //void pullDB(int);
+    //void newQuiz(QString &, QVector<int>, QVector<QString>);
+    void newQuiz(QString, QVector<StudentQuiz>);
+    bool studentExist(QString &);
+    //void closeDB();
+
 
 
 };
