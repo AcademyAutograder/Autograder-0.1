@@ -105,7 +105,7 @@ void StudentDB::newStudent(QString &studentName)
         qDebug() << "Success";*/
     QString defaultf = "Default";
     QString defaultl = "Defaultson";
-    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + generateID(defaultf,defaultl) + "'";
+    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + generateID(defaultf,defaultl) + "')";
     if(query.exec(insert))
         qDebug() << "Inserted";
 
@@ -154,7 +154,7 @@ bool StudentDB::studentExist(QString &studentName)
 void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 {
     QSqlQuery q;
-    QString addColumns = "UPDATE gradetable " + quizName ;
+    //QString addColumns = "UPDATE gradetable " + quizName ;
     QString makeComp = "ALTER TABLE gradetable ADD " + quizName + "CompileTime REAL";
     if(q.exec(makeComp))
         qDebug() << "Made Comp";

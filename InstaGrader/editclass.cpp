@@ -98,10 +98,6 @@ void EditClass::on_savebutton_clicked()
     //Here goes the creating new student part. I don't know how to open the database though.
 
 
-
-
-
-
     for(int x = 0; x < model[0]->stringList().size(); x++)
     {
         QString stName = model[0]->stringList().at(x);
