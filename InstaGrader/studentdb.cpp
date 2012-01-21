@@ -304,7 +304,7 @@ bool StudentDB::studentExist(QString &studentName)
     q.exec("SELECT studentname FROM gradetable");
     while(q.next())
     {
-        if(q.value().toString() == studentName)
+        if(q.value(0).toString() == studentName)
             exist = true;
     }
     //Check if the student exists here
@@ -313,7 +313,18 @@ bool StudentDB::studentExist(QString &studentName)
     else
         return false;
 }
+
 void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 {
 
+}
+// void newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
+// fill the database here
+QString StudentDB::generateID(QString &firstName,QString &lastName)
+{
+    firstName = firstName.toLower();
+    lastName = lastName.toLower();
+    QString userID = lastName + firstName[0];
+    qDebug() << userID;
+    return userID;
 }

@@ -33,7 +33,8 @@ public:
     //void newQuiz(QString &, QVector<int>, QVector<QString>);
     void newQuiz(QString, QVector<StudentQuiz>);
     bool studentExist(QString &);
-    //void closeDB();
+    void closeDB();
+    QString generateID(QString &,QString &);
 
 
 
