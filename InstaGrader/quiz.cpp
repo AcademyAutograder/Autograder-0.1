@@ -151,6 +151,14 @@ uint StudentQuiz::getTimeInt()
 {
     return timeOfDelivery.toTime_t();
 }
+QString StudentQuiz::getStudentName()
+{
+    return studentName;
+}
+void StudentQuiz::setStudentName(QString &n)
+{
+    studentName = n;
+}
 
 StudentQuiz::~StudentQuiz()
 {

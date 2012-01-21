@@ -94,96 +94,18 @@ void StudentDB::openDB(int n)
     q.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar (30)");
     //return true;
 }
-void StudentDB::newStudent(QString &studentName)
+void StudentDB::newStudent(QString &studentName, QString id)
 {
 
     //QString id = lastname;
     //id.prepend(firstname.at(0));
     QSqlQuery query;
-    if(query.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar(30))"))
-        qDebug() << "Success";
+    /*if(query.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar(30))"))
+        qDebug() << "Success";*/
 
-    QString insert = "INSERT INTO gradetable (studentname) VALUES ('" + studentName + "')";
+    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + id + "'";
     if(query.exec(insert))
         qDebug() << "Inserted";
-
-
-    if(query.exec("SELECT studentname FROM gradetable"))
-        qDebug() << "Selected";
-    while(query.next())
-    {
-        qDebug() << "Looped";
-        qDebug() << query.value(0).toString();
-    }
-    if(quizGrade == 9)
-    {
-        if (db.open())
-        {
-            qDebug() << "Open Here";
-        }
-        for(int i = 0; i < quizlist9.length(); i++)
-        {
-
-
-            QString myquery = "INSERT INTO " + quizlist9.at(i) + " VALUES (?)";
-            query.exec(myquery);
-            query.bindValue(0, studentName);
-            QString quizRow = "UPDATE gradetable SET ";
-            quizRow += quizlist9.at(i);
-            quizRow += "='SELECT ";
-            quizRow += studentName;
-            quizRow += "FROM " + quizlist9.at(i) + "'";
-            query.exec(quizRow);
-        }
-    }
-    if(quizGrade == 10)
-    {
-        for(int i = 0; i < quizlist10.length(); i++)
-        {
-
-            QString myquery = "INSERT INTO " + quizlist10.at(i) + " VALUES (?)";
-            query.exec(myquery);
-            query.bindValue(0, studentName);
-            QString quizRow = "UPDATE gradetable SET ";
-            quizRow += quizlist10.at(i);
-            quizRow += "='SELECT ";
-            quizRow += studentName;
-            quizRow += "FROM " + quizlist10.at(i) + "'";
-            query.exec(quizRow);
-        }
-    }
-    if(quizGrade == 11)
-    {
-        for(int i = 0; i < quizlist11.length(); i++)
-        {
-
-            QString myquery = "INSERT INTO " + quizlist11.at(i) + " VALUES (?)";
-            query.exec(myquery);
-            query.bindValue(0, studentName);
-            QString quizRow = "UPDATE gradetable SET ";
-            quizRow += quizlist11.at(i);
-            quizRow += "='SELECT ";
-            quizRow += studentName;
-            quizRow += "FROM " + quizlist11.at(i) + "' WHERE studentName= " + studentName;
-            query.exec(quizRow);
-        }
-    }
-    if(quizGrade == 12)
-    {
-        for(int i = 0; i < quizlist12.length(); i++)
-        {
-
-            QString myquery = "INSERT INTO " + quizlist12.at(i) + " VALUES (?)";
-            query.exec(myquery);
-            query.bindValue(0, studentName);
-            QString quizRow = "UPDATE gradetable SET ";
-            quizRow += quizlist12.at(i);
-            quizRow += "='SELECT ";
-            quizRow += studentName;
-            quizRow += "FROM " + quizlist12.at(i) + "'";
-            query.exec(quizRow);
-        }
-    }
 
 }
 
@@ -212,90 +134,7 @@ QStringList StudentDB::getNames()
     return studentList;
 }
 
-void StudentDB::pushDB(int n)
-{
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    if(n == 9)
-    {
-    db.setDatabaseName("Grade9.db");
-    if (db.open())
-    {
-        qDebug() << "Open";
-    }
-    /*if (!db.open()) {
-        QMessageBox::critical(0, qApp->tr("Cannot open database"),
-            qApp->tr("Unable to establish a database connection.\n"
-                     "This example needs SQLite support. Please read "
-                     "the Qt SQL driver documentation for information how "
-                     "to build it.\n\n"
-                     "Click Cancel to exit."), QMessageBox::Cancel);
-        return false;*/
-            //QSqlQuery query;
-          // query.prepare("INSERT INTO person (id, forename, surname) "
-            //             "VALUES (:id, :forename, :surname)");
-           //query.bindValue(":id", 1001);
-           //query.bindValue(":forename", "Bart");
-           //query.bindValue(":surname", "Simpson");
-           //query.exec();
 
-    }
-    if(n == 10)
-    {
-    db.setDatabaseName("Grade10.db");
-    if (db.open())
-    {
-        qDebug() << "Open";
-    }
-    /*if (!db.open()) {
-        QMessageBox::critical(0, qApp->tr("Cannot open database"),
-            qApp->tr("Unable to establish a database connection.\n"
-                     "This example needs SQLite support. Please read "
-                     "the Qt SQL driver documentation for information how "
-                     "to build it.\n\n"
-                     "Click Cancel to exit."), QMessageBox::Cancel);
-        //return false;*/
-
-    }
-    if(n == 11)
-    {
-    db.setDatabaseName("Grade11.db");
-    if (db.open())
-    {
-        qDebug() << "Open";
-    }
-    /*if (!db.open()) {
-        QMessageBox::critical(0, qApp->tr("Cannot open database"),
-            qApp->tr("Unable to establish a database connection.\n"
-                     "This example needs SQLite support. Please read "
-                     "the Qt SQL driver documentation for information how "
-                     "to build it.\n\n"
-                     "Click Cancel to exit."), QMessageBox::Cancel);
-        //return false;*/
-
-    }
-    if(n == 12)
-    {
-    db.setDatabaseName("Grade12.db");
-    if (db.open())
-    {
-        qDebug() << "Open";
-    }
-    /*if (!db.open()) {
-        QMessageBox::critical(0, qApp->tr("Cannot open database"),
-            qApp->tr("Unable to establish a database connection.\n"
-                     "This example needs SQLite support. Please read "
-                     "the Qt SQL driver documentation for information how "
-                     "to build it.\n\n"
-                     "Click Cancel to exit."), QMessageBox::Cancel);
-        //return false;
-    }*/
-    }
-    //return true;
-    QSqlQuery q;
-    q.exec("DROP TABLE gradetable IF EXISTS");
-    q.exec("CREATE TABLE gradetable(studentname varchar(30), id varchar (30)) IF NOT EXISTS");
-    Student temp;
-}
 
 bool StudentDB::studentExist(QString &studentName)
 {
@@ -316,7 +155,28 @@ bool StudentDB::studentExist(QString &studentName)
 
 void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 {
-
+    QSqlQuery q;
+    QString makeComp = "ALTER TABLE gradetable ADD " + quizName + "CompileTime REAL";
+    if(q.exec(makeComp))
+        qDebug() << "Made Comp";
+    QString makeStatus = "ALTER TABLE gradetable ADD " + quizName + "Status VARCHAR(30)";
+    if(q.exec(makeStatus))
+        qDebug() << "Made Status";
+    QString makeReason = "ALTER TABLE gradetable ADD " + quizName + "Reason VARCHAR(30)";
+    if(q.exec(makeReason))
+        qDebug() << "Made Reason";
+    QString makeDTime = "ALTER TABLE gradetable ADD " + quizName + "DeliveryTime VARCHAR(30)";
+    if(q.exec(makeDTime))
+        qDebug() << "Made Dtime";
+    QString setDefaults = "UPDATE gradetable SET " + quizName +"CompileTime=0.00, " + quizName + "Status='FAIL', " + quizName + "Reason='Did Not Submit', " + quizName + "DeliveryTime='0:00'";
+    if(q.exec(setDefaults))
+        qDebug() << "SetDefaults";
+    for (int i =0; i < quizVector.size(); i++)
+    {
+        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector.at(i).getRunTime() + ", " + quizName + "Status='" + quizVector.at(i).getStatus() + "', " + quizName +"Reason='" + quizVector.at(i).getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector.at(i).getTimeString() +"' WHERE studentname='" + quizVector.at(i).getStudentName() +"'";
+        if(q.exec(updateStudent))
+            qDebug() << "Set Student " << quizVector.at(i).getStudentName();
+    }
 }
 // void newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 // fill the database here
@@ -327,4 +187,8 @@ QString StudentDB::generateID(QString &firstName,QString &lastName)
     QString userID = lastName + firstName[0];
     qDebug() << userID;
     return userID;
+}
+void StudentDB::closeDB()
+{
+    db.close();
 }

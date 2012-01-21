@@ -27,6 +27,7 @@ protected:
     QDateTime timeOfDelivery;
     QString failReason;
     int rank;
+    QString studentName;
 public:
     StudentQuiz ();
     StudentQuiz(QString &);
@@ -39,6 +40,8 @@ public:
     QDateTime getTOD();
     QString getTimeString();
     uint getTimeInt();
+    void setStudentName(QString &);
+    QString getStudentName();
     void setTOD(QDateTime);
     void setRank(int);
     int getRank();
