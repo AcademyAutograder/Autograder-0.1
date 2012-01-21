@@ -35,7 +35,7 @@ EditClass::EditClass(QWidget *parent) :
     ui->gradecomboBox->addItem("11th Grade");
     ui->gradecomboBox->addItem("12th Grade");
 
-    editclasslist << "Type here";
+    //editclasslist << "Type here";
     model[0]->setStringList(editclasslist);
     model[1]->setStringList(editclasslist);
     model[2]->setStringList(editclasslist);
@@ -45,7 +45,7 @@ EditClass::EditClass(QWidget *parent) :
 
     ui->editclasslistView->setModel(model[modelnum]);
     ui->editclasslistView->setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::DoubleClicked);
-
+    database.openDB(9);
 
     // ui->gradecomboBox->
 }
@@ -88,13 +88,18 @@ void EditClass::on_insertstudbutton_clicked()
 
 void EditClass::on_deletestudbutton_clicked()
 {
+    QString delStud = model[0]->stringList().at(ui->editclasslistView->currentIndex().row());
+    database.deleteStudent(delStud);
     model[modelnum]->removeRows(ui->editclasslistView->currentIndex().row(),1);
+
 }
 void EditClass::on_savebutton_clicked()
 {
     //Here goes the creating new student part. I don't know how to open the database though.
-    /*
-    StudentDB database(9);
+
+
+
+
 
 
     for(int x = 0; x < model[0]->stringList().size(); x++)
@@ -103,7 +108,7 @@ void EditClass::on_savebutton_clicked()
         if(database.studentExist(stName))
             database.newStudent(stName);
     }
-    */
 
+    model[0]->setStringList(database.getNames());
 
 }

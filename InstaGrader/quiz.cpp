@@ -7,7 +7,7 @@
 #include <QTextStream>
 
 #include "quiz.h"
-#include "execthread.h"
+
 
 #define CL "\"C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\VC\\bin\\cl.exe\""
 
