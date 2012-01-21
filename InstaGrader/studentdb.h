@@ -25,7 +25,7 @@ public:
     QVector<Student> studentVector;
     StudentDB();
     void openDB(int);
-    void newStudent(QString &, QString &id);
+    void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
 

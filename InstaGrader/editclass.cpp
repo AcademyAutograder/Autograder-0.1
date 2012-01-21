@@ -106,7 +106,7 @@ void EditClass::on_savebutton_clicked()
     {
         QString stName = model[0]->stringList().at(x);
         if(!database.studentExist(stName))
-            database.newStudent(stName,stName);
+            database.newStudent(stName);
     }
 
     model[0]->setStringList(database.getNames());
