@@ -110,7 +110,7 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 
     QStringList dirName;
     QString dirs;
-    QVector times;
+    //QVector times;
     dirName = directory.entryList();
     for(int g = 2; g < dirName.size(); g++)
     {

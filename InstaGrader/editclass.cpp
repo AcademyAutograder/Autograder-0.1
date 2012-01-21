@@ -41,16 +41,12 @@ EditClass::EditClass(QWidget *parent) :
     model[2]->setStringList(editclasslist);
     model[3]->setStringList(editclasslist);
 
-
+    database.openDB(9);
+    model[0]->setStringList(database.getNames());
 
     ui->editclasslistView->setModel(model[modelnum]);
     ui->editclasslistView->setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::DoubleClicked);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9b9ab73e87fdbc6cfb63fe291fd42c5f60cbb888
     // ui->gradecomboBox->
 }
 
@@ -109,7 +105,7 @@ void EditClass::on_savebutton_clicked()
     for(int x = 0; x < model[0]->stringList().size(); x++)
     {
         QString stName = model[0]->stringList().at(x);
-        if(database.studentExist(stName))
+        if(!database.studentExist(stName))
             database.newStudent(stName);
     }
 
