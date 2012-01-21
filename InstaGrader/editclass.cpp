@@ -46,11 +46,6 @@ EditClass::EditClass(QWidget *parent) :
     ui->editclasslistView->setModel(model[modelnum]);
     ui->editclasslistView->setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::DoubleClicked);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9b9ab73e87fdbc6cfb63fe291fd42c5f60cbb888
     // ui->gradecomboBox->
 }
 

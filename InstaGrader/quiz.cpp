@@ -159,6 +159,11 @@ void StudentQuiz::setStudentName(QString &n)
 {
     studentName = n;
 }
+QString StudentQuiz::getRunTimeString()
+{
+    QString str = QString::number(runTime);
+    return str;
+}
 
 StudentQuiz::~StudentQuiz()
 {

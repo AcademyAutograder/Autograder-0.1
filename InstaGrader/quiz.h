@@ -45,6 +45,7 @@ public:
     void setTOD(QDateTime);
     void setRank(int);
     int getRank();
+    QString getRunTimeString();
     ~StudentQuiz();
 };
 

@@ -94,7 +94,7 @@ void StudentDB::openDB(int n)
     q.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar (30)");
     //return true;
 }
-void StudentDB::newStudent(QString &studentName, QString id)
+void StudentDB::newStudent(QString &studentName)
 {
 
     //QString id = lastname;
@@ -102,8 +102,9 @@ void StudentDB::newStudent(QString &studentName, QString id)
     QSqlQuery query;
     /*if(query.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar(30))"))
         qDebug() << "Success";*/
-
-    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + id + "'";
+    QString defaultf = "Default";
+    QString defaultl = "Defaultson";
+    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + generateID(defaultf,defaultl) + "'";
     if(query.exec(insert))
         qDebug() << "Inserted";
 
@@ -173,9 +174,9 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
         qDebug() << "SetDefaults";
     for (int i =0; i < quizVector.size(); i++)
     {
-        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector.at(i).getRunTime() + ", " + quizName + "Status='" + quizVector.at(i).getStatus() + "', " + quizName +"Reason='" + quizVector.at(i).getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector.at(i).getTimeString() +"' WHERE studentname='" + quizVector.at(i).getStudentName() +"'";
+        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector[i].getRunTimeString() + ", " + quizName + "Status='" + quizVector[i].getStatus() + "', " + quizName +"Reason='" + quizVector[i].getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getStudentName() +"'";
         if(q.exec(updateStudent))
-            qDebug() << "Set Student " << quizVector.at(i).getStudentName();
+            qDebug() << "Set Student " << quizVector[i].getStudentName();
     }
 }
 // void newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
