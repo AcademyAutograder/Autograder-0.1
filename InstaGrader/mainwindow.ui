@@ -14,7 +14,7 @@
    <string>InstaGrader</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="qtinstagraderfinal.qrc">
+   <iconset>
     <normaloff>:/new/prefix1/instagradercube.jpg</normaloff>:/new/prefix1/instagradercube.jpg</iconset>
   </property>
   <property name="iconSize">
@@ -150,7 +150,7 @@
      <x>0</x>
      <y>0</y>
      <width>1381</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -265,8 +265,6 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="qtinstagraderfinal.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

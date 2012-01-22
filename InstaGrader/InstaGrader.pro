@@ -19,6 +19,7 @@ SOURCES += main.cpp\
     results.cpp \
     editclass.cpp \
     createnewquiz.cpp \
+    displaytable.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -27,13 +28,15 @@ HEADERS  += mainwindow.h \
     studentdb.h \
     results.h \
     editclass.h \
-    createnewquiz.h
+    createnewquiz.h \
+    displaytable.h
 
 FORMS    += \
     mainwindow.ui \
     results.ui \
     editclass.ui \
     createnewquiz.ui \
+    displaytable.ui
 
 
 RESOURCES += \
