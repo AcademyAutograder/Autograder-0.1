@@ -103,11 +103,11 @@ void StudentDB::newStudent(QString &studentName)
     QSqlQuery query;
     /*if(query.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar(30))"))
         qDebug() << "Success";*/
-    QString defaultf = "Default";
-    QString defaultl = "Defaultson";
-    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + generateID(defaultf,defaultl) + "')";
+
+    QString insert = "INSERT INTO gradetable (studentname, id) VALUES ('" + studentName + "', '" + generateID(studentName,studentName) + "')";
     if(query.exec(insert))
         qDebug() << "Inserted";
+    qDebug() << studentName;
 
 }
 
@@ -129,6 +129,7 @@ QStringList StudentDB::getNames()
     //int reps = q.size();
     //QSqlRecord rec = q.record();
     //int reps = rec.size();
+    q.exec("SELECT * FROM gradetable ORDER BY studentName");
     while(q.next())
     {
         studentList += q.value(0).toString();
@@ -182,10 +183,10 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
 // fill the database here
 QString StudentDB::generateID(QString &firstName,QString &lastName)
 {
-    firstName = firstName.toLower();
-    lastName = lastName.toLower();
-    QString userID = lastName + firstName[0];
-    qDebug() << userID;
+    QString f,l;
+    f = firstName.toLower();
+    l = lastName.toLower();
+    QString userID = l + f[0];
     return userID;
 }
 void StudentDB::closeDB()
