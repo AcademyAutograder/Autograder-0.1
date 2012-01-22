@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QStringListModel>
 #include <QFileSystemModel>
+#include "studentdb.h"
 
 
 namespace Ui {
@@ -41,6 +42,7 @@ private slots:
 
 private:
     QString dir, testcase, ans, quizName;
+    StudentDB database;
 
 };
 

@@ -22,6 +22,9 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     testcase = "notempty"; //Initialzized so that there won't be any checking of if file with blank name exists
     ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
     filemodel = new QFileSystemModel (this);
+
+
+    database.openDB(9);
 }
 
 CreateNewQuiz::~CreateNewQuiz()
@@ -154,6 +157,8 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         mes.exec();
         // newQuiz(quizName, ve);
     }
+    database.newQuiz(quizName,ve);
+
 
 
     filemodel->setRootPath(dir1);
