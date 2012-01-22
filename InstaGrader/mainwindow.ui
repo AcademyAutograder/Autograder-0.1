@@ -150,7 +150,7 @@
      <x>0</x>
      <y>0</y>
      <width>1381</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -158,6 +158,7 @@
      <string>File</string>
     </property>
     <addaction name="actionNew_Quiz"/>
+    <addaction name="actionOpen"/>
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuClass">
@@ -258,6 +259,11 @@
   <action name="actionQuiz_History">
    <property name="text">
     <string>Quiz History</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
    </property>
   </action>
  </widget>

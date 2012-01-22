@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     results.cpp \
     editclass.cpp \
     createnewquiz.cpp \
-    displaytable.cpp
+    displaytable.cpp \
+    choosegrade.cpp \
+    compiledisp.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -29,14 +31,18 @@ HEADERS  += mainwindow.h \
     results.h \
     editclass.h \
     createnewquiz.h \
-    displaytable.h
+    displaytable.h \
+    choosegrade.h \
+    compiledisp.h
 
 FORMS    += \
     mainwindow.ui \
     results.ui \
     editclass.ui \
     createnewquiz.ui \
-    displaytable.ui
+    displaytable.ui \
+    choosegrade.ui \
+    compiledisp.ui
 
 
 RESOURCES += \

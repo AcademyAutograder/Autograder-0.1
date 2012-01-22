@@ -18,6 +18,7 @@ class MainWindow : public QMainWindow
 public:
     friend MainWindow &instance();
     Ui::MainWindow *ui;
+    int grade; //0 = 9th, 1 = 10th, etc;
 
 private slots:
     void on_actionNew_Quiz_triggered();
@@ -34,6 +35,8 @@ private slots:
 
     void on_actionOpen_class_records_triggered();
 
+    void on_actionOpen_triggered();
+
 private:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -41,6 +44,7 @@ private:
     EditClass *classedit;
     Results *resultobj;
     DisplayTable *disptable;
+
 };
 
 #endif // MAINWINDOW_H
