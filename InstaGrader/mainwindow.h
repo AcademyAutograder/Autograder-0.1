@@ -6,6 +6,8 @@
 #include "editclass.h"
 #include "results.h"
 #include "displaytable.h"
+#include "studentdb.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -34,6 +36,8 @@ private slots:
 
     void on_actionOpen_class_records_triggered();
 
+    void on_actionView_Student_Records_triggered();
+
 private:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -41,6 +45,7 @@ private:
     EditClass *classedit;
     Results *resultobj;
     DisplayTable *disptable;
+
 };
 
 #endif // MAINWINDOW_H

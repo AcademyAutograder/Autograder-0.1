@@ -240,12 +240,12 @@
   </action>
   <action name="actionAdd_new_testcase_ans">
    <property name="text">
-    <string>add new testcase/ans</string>
+    <string>Add New Testcase/Answers</string>
    </property>
   </action>
   <action name="actionOpen_class_records">
    <property name="text">
-    <string>Open class records</string>
+    <string>Open Class Records</string>
    </property>
   </action>
   <action name="actionSave_2">
@@ -261,6 +261,16 @@
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionView_Student_s_Records">
+   <property name="text">
+    <string>View Student's Records</string>
+   </property>
+  </action>
+  <action name="actionView_Student_Records">
+   <property name="text">
+    <string>View Student Records</string>
    </property>
   </action>
  </widget>
