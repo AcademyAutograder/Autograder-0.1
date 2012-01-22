@@ -151,18 +151,14 @@ uint StudentQuiz::getTimeInt()
 {
     return timeOfDelivery.toTime_t();
 }
-QString StudentQuiz::getStudentName()
+void setRank(int r)
 {
-    return studentName;
+    rank = r;
 }
-void StudentQuiz::setStudentName(QString &n)
+
+int getRank()
 {
-    studentName = n;
-}
-QString StudentQuiz::getRunTimeString()
-{
-    QString str = QString::number(runTime);
-    return str;
+    return rank;
 }
 
 StudentQuiz::~StudentQuiz()

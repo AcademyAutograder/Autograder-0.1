@@ -4,6 +4,7 @@
 #include "ui_editclass.h"
 #include "ui_results.h"
 #include <QTextStream>
+#include "displaytable.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -54,3 +55,9 @@ void MainWindow::on_Homestudentlist_activated(const QModelIndex &index)
 }
 
 
+
+void MainWindow::on_actionOpen_class_records_triggered()
+{
+    disptable = new DisplayTable(this);
+    disptable->show();
+}

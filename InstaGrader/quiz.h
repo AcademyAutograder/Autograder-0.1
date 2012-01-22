@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QFile>
+#include <QDateTime>
 
 
 class Quiz
@@ -13,7 +14,7 @@ protected:
 public:
     Quiz();
     Quiz(QString &);
-    void compile();
+    void compile(QString &cppFileName);
     void execute(const QString &) ;
     QString getName();
     void setName(const QString &);
@@ -23,7 +24,10 @@ class StudentQuiz : public Quiz
 {
 protected:
     bool status;
+    QDateTime timeOfDelivery;
     QString failReason;
+    int rank;
+    QString studentName;
 public:
     StudentQuiz ();
     StudentQuiz(QString &);
@@ -33,6 +37,15 @@ public:
     float getRunTime();
     void setStatus(bool);
     QString getFailReason();
+    QDateTime getTOD();
+    QString getTimeString();
+    uint getTimeInt();
+    void setStudentName(QString &);
+    QString getStudentName();
+    void setTOD(QDateTime);
+    void setRank(int);
+    int getRank();
+    QString getRunTimeString();
     ~StudentQuiz();
 };
 

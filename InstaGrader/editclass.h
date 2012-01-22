@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include <QStringListModel>
+#include "studentdb.h"
+
+
 
 
 namespace Ui {
@@ -19,6 +22,7 @@ public:
     //QStringListModel *nineclassmodel, *tenclassmodel, *elevenclassmodel, *twelveclassmodel;
     QStringListModel *model[4];
     QStringList editclasslist;
+
     
 private slots:
     void on_addstudbutton_clicked();
@@ -34,6 +38,10 @@ private slots:
 private:
     Ui::EditClass *ui;
     int modelnum;
+    StudentDB database;
+
+
+
 
 };
 
