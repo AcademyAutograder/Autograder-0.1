@@ -150,7 +150,7 @@
      <x>0</x>
      <y>0</y>
      <width>1381</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -158,23 +158,14 @@
      <string>File</string>
     </property>
     <addaction name="actionNew_Quiz"/>
-    <addaction name="actionOpen_Quiz"/>
-    <addaction name="actionSave"/>
-    <addaction name="actionSave_2"/>
+    <addaction name="actionOpen"/>
     <addaction name="actionQuit"/>
-   </widget>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
-    </property>
-    <addaction name="actionCopy"/>
    </widget>
    <widget class="QMenu" name="menuClass">
     <property name="title">
      <string>Class</string>
     </property>
     <addaction name="actionEdit_class"/>
-    <addaction name="actionAdd_new_testcase_ans"/>
     <addaction name="actionOpen_class_records"/>
    </widget>
    <widget class="QMenu" name="menuQuiz">
@@ -182,20 +173,22 @@
      <string>Quiz</string>
     </property>
     <addaction name="actionEdit_data"/>
+    <addaction name="actionResults"/>
+   </widget>
+   <widget class="QMenu" name="menuStudent">
+    <property name="title">
+     <string>Student</string>
+    </property>
+    <addaction name="actionQuiz_History"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuEdit"/>
    <addaction name="menuClass"/>
    <addaction name="menuQuiz"/>
+   <addaction name="menuStudent"/>
   </widget>
   <action name="actionFile">
    <property name="text">
     <string>File</string>
-   </property>
-  </action>
-  <action name="actionEdit">
-   <property name="text">
-    <string>Edit</string>
    </property>
   </action>
   <action name="actionClass">
@@ -248,11 +241,6 @@
     <string>Open class records</string>
    </property>
   </action>
-  <action name="actionSave_2">
-   <property name="text">
-    <string>Save</string>
-   </property>
-  </action>
   <action name="actionEdit_data">
    <property name="text">
     <string>Edit data</string>
@@ -261,6 +249,21 @@
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionResults">
+   <property name="text">
+    <string>Results</string>
+   </property>
+  </action>
+  <action name="actionQuiz_History">
+   <property name="text">
+    <string>Quiz History</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
    </property>
   </action>
  </widget>
