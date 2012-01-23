@@ -33,20 +33,7 @@
     <string>Student History</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>360</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Open record</string>
-   </property>
-  </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>30</x>

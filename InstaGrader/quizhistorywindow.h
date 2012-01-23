@@ -20,14 +20,16 @@ public:
     
 private slots:
 
-    void on_pushButton_5_clicked();
+    void on_tableView_activated(const QModelIndex &index);
 
 private:
     Ui::QuizHistorywindow *ui;
     commontable *tablecommon;
+
     QStringList list;
     QStringListModel *listmodel;
     StudentDB database;
+
 };
 
 #endif // QUIZHISTORYWINDOW_H
