@@ -6,6 +6,9 @@ QuizHistorywindow::QuizHistorywindow(QWidget *parent) :
     ui(new Ui::QuizHistorywindow)
 {
     ui->setupUi(this);
+    listmodel = new QStringListModel (this);
+    listmodel->setStringList(list);
+    ui->listView->setModel(listmodel);
 }
 
 QuizHistorywindow::~QuizHistorywindow()
@@ -13,28 +16,9 @@ QuizHistorywindow::~QuizHistorywindow()
     delete ui;
 }
 
-void QuizHistorywindow::on_pushButton_clicked()
+
+void QuizHistorywindow::on_listView_activated(const QModelIndex &index)
 {
-
-}
-
-void QuizHistorywindow::on_pushButton_2_clicked()
-{
-
-}
-
-void QuizHistorywindow::on_pushButton_3_clicked()
-{
-
-}
-
-void QuizHistorywindow::on_pushButton_4_clicked()
-{
-
-}
-
-void QuizHistorywindow::on_pushButton_5_clicked()
-{
-   tablecommon = new commontable;
-   tablecommon->show();
+    tablecommon = new commontable;
+    tablecommon->show();
 }

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "commontable.h"
+#include <QStringListModel>
 
 namespace Ui {
 class QuizHistorywindow;
@@ -17,19 +18,14 @@ public:
     ~QuizHistorywindow();
     
 private slots:
-    void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_3_clicked();
-
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_5_clicked();
+    void on_listView_activated(const QModelIndex &index);
 
 private:
     Ui::QuizHistorywindow *ui;
     commontable *tablecommon;
+    QStringList list;
+    QStringListModel *listmodel;
 };
 
 #endif // QUIZHISTORYWINDOW_H

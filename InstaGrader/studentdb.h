@@ -31,8 +31,12 @@ public:
 
 
 
+
     //void pushDB(int);
     //void pullDB(int);
+
+
+    QStringList getQuizzes();
 
     QString generateID(QString &, QString &);
     void newQuiz(QString, QVector<StudentQuiz>);

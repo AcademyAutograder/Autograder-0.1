@@ -24,16 +24,9 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
     filemodel = new QFileSystemModel (this);
 
-    ui->comboBox->addItem("9th Grade");
-    ui->comboBox->addItem("10th Grade");
-    ui->comboBox->addItem("11th Grade");
-    ui->comboBox->addItem("12th Grade");
 
-<<<<<<< HEAD
-=======
     database.openDB(9);
 
->>>>>>> 0ad371140270636d15d391f4e5090e5b8290ebf2
 }
 
 CreateNewQuiz::~CreateNewQuiz()
@@ -106,9 +99,6 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
 
     exectime = ui->exectimeLineEdit->text().toInt();
-    MainWindow &instance();
-    instance().grade = ui->comboBox->currentIndex();
-    grade = ui->comboBox->currentIndex();
     qDebug() << quizName;
 
     //StudentDB mainDB(11);
@@ -156,8 +146,10 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     displcompile->addTextToBox(test);
     displcompile->raise();
 
+
     for(int x = 0; x < ve.size(); x++)
     {
+        displcompile->update();
         QString compFile = fDir + "/" + dirName[x+2];
         ve[x].compile(compFile);
     }
@@ -165,7 +157,7 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     for(int x = 0; x < ve.size(); x++)
     {
         QString timeHolder;
-        ve[x].execute(testcase);
+        ve[x].execute(testcase,exectime);
         ve[x].grade(ans);
         timeHolder.setNum(ve[x].getRunTime());
         if(ve[x].getStatus())

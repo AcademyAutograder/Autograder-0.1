@@ -7,12 +7,19 @@
 #include "results.h"
 #include "displaytable.h"
 
-#include "studentdb.h"
-
-
 
 #include "studentdb.h"
 
+
+
+//#include "studentdb.h"
+
+#include "studenthistory.h"
+#include "quizhistorywindow.h"
+
+
+
+#include "studentdb.h"
 #include "studenthistory.h"
 #include "quizhistorywindow.h"
 
@@ -66,7 +73,7 @@ private:
     Results *resultobj;
     DisplayTable *disptable;
 
-    StudentDB database;
+    //StudentDB database;
 
     studenthistory *historystudent;
     QuizHistorywindow *windowhistory;
