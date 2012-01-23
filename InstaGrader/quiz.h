@@ -24,14 +24,14 @@ public:
 class StudentQuiz : public Quiz
 {
 protected:
-    bool status;
+    QString status;
     QDateTime timeOfDelivery;
     int rank;
     QString studentName;
 public:
     StudentQuiz ();
     StudentQuiz(QString &);
-    bool getStatus();
+    QString getStatus();
     void overrideStat();
     void grade(QString &);
     float getRunTime();

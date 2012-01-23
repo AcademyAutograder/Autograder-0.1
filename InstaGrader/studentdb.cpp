@@ -106,7 +106,11 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
     {
         qDebug() << quizVector[i].getFailReason();
         qDebug() << quizVector[i].getName();
-        QString updateStudent = "UPDATE " + quizName + " SET ExecuteTime=" + quizVector[i].getRunTimeString() + ", Status='" + quizVector[i].getStatus() + "', Reason='" + quizVector[i].getFailReason() + "', DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getName() +"'";
+        qDebug() << quizVector[i].getRunTimeString();
+        qDebug() << quizVector[i].getStatus();
+        qDebug() << quizVector[i].getTimeString();
+
+        QString updateStudent = "UPDATE " + quizName + " SET ExecuteTime='" + quizVector[i].getRunTimeString() + "', Status='" + quizVector[i].getStatus() + "', Reason='" + quizVector[i].getFailReason() + "', DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getName() +"'";
         q.exec(updateStudent);
     }
 

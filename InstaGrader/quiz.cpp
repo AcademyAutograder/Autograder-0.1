@@ -45,7 +45,7 @@ void Quiz::execute(const QString &testCases,int execTime)
              return;
     t.start();
 
-    if (!exec.waitForFinished(execTime))
+    if (!exec.waitForFinished(execTime*1000))
     {
         this->runTime = 0;
         failReason = "HANG";
@@ -71,7 +71,7 @@ StudentQuiz::StudentQuiz(QString &fName)
 {
     name = fName;
 }
-bool StudentQuiz::getStatus()
+QString StudentQuiz::getStatus()
 {
     return status;
 }
@@ -104,23 +104,23 @@ void StudentQuiz::grade(QString &anFileName)
     }
     if(mistake)
     {
-        status = true;
+        status = "PASS";
         failReason = "N/A";
     }
     else if(failReason != "INCORRECT OUTPUT")
     {
-        status = false;
+        status = "FAIL";
         failReason = "DID NOT COMPILE";
     }
     else
-        status = false;
+        status = "FAIL";
 }
 void StudentQuiz::overrideStat()
 {
-    if(status)
-        status = 0;
+    if(status == "PASS")
+        status = "FAIL";
     else
-        status = 1;
+        status = "PASS";
 }
 float StudentQuiz::getRunTime()
 {
@@ -132,7 +132,10 @@ QString StudentQuiz::getFailReason()
 }
 void StudentQuiz::setStatus(bool s)
 {
-    status = s;
+    if(s)
+        status = "PASS";
+    else
+        status = "FAIL";
 }
 QDateTime StudentQuiz::getTOD()
 {
