@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     choosegrade.cpp \
     compiledisp.cpp \
     quizhistorywindow.cpp \
-    studenthistory.cpp
+    studenthistory.cpp \
+    commontable.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -37,7 +38,8 @@ HEADERS  += mainwindow.h \
     choosegrade.h \
     compiledisp.h \
     quizhistorywindow.h \
-    studenthistory.h
+    studenthistory.h \
+    commontable.h
 
 FORMS    += \
     mainwindow.ui \
@@ -48,7 +50,8 @@ FORMS    += \
     choosegrade.ui \
     compiledisp.ui \
     quizhistorywindow.ui \
-    studenthistory.ui
+    studenthistory.ui \
+    commontable.ui
 
 
 RESOURCES += \

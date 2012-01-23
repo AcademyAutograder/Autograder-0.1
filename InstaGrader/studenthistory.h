@@ -2,6 +2,7 @@
 #define STUDENTHISTORY_H
 
 #include <QDialog>
+#include "commontable.h"
 
 namespace Ui {
 class studenthistory;
@@ -24,8 +25,11 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::studenthistory *ui;
+    commontable *tablecommonstudent;
 };
 
 #endif // STUDENTHISTORY_H

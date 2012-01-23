@@ -32,3 +32,9 @@ void studenthistory::on_pushButton_4_clicked()
 {
 
 }
+
+void studenthistory::on_pushButton_5_clicked()
+{
+    tablecommonstudent = new commontable;
+    tablecommonstudent -> show();
+}
