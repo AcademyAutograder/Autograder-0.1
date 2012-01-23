@@ -2,6 +2,7 @@
 #define QUIZHISTORYWINDOW_H
 
 #include <QDialog>
+#include "commontable.h"
 
 namespace Ui {
 class QuizHistorywindow;
@@ -24,8 +25,11 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::QuizHistorywindow *ui;
+    commontable *tablecommon;
 };
 
 #endif // QUIZHISTORYWINDOW_H

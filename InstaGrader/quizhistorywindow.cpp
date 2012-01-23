@@ -32,3 +32,9 @@ void QuizHistorywindow::on_pushButton_4_clicked()
 {
 
 }
+
+void QuizHistorywindow::on_pushButton_5_clicked()
+{
+   tablecommon = new commontable;
+   tablecommon->show();
+}

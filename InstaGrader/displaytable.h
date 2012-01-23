@@ -5,6 +5,7 @@
 #include <QtGui>
 #include <QtSql>
 #include <QtCore>
+
 namespace Ui {
 class DisplayTable;
 }
