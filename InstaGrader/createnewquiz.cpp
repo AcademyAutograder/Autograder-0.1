@@ -156,19 +156,14 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         QString compFile = fDir + "/" + dirName[x+2];
         ve[x].compile(compFile);
     }
-    QMessageBox mes;
+
     for(int x = 0; x < ve.size(); x++)
     {
         QString timeHolder;
         ve[x].execute(testcase,exectime);
-        ve[x].grade(ans);
+        if(ve[x].getStatus() != "HANG")
+            ve[x].grade(ans);
         timeHolder.setNum(ve[x].getRunTime());
-        if(ve[x].getStatus())
-            mes.setText(ve[x].getName() + ": Pass : " + timeHolder + " seconds");
-        else
-            mes.setText(ve[x].getName() + ": Fail : " + timeHolder + " seconds");
-        mes.exec();
-        // newQuiz(quizName, ve);
     }
     database.newQuiz(quizName,ve);
 
