@@ -9,6 +9,10 @@
 #include "studentdb.h"
 
 
+#include "studenthistory.h"
+#include "quizhistorywindow.h"
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -43,6 +47,11 @@ private slots:
     void on_actionOpen_triggered();
 
 
+    void on_actionQuiz_History_triggered();
+
+    void on_actionResults_triggered();
+
+
 private:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -50,7 +59,11 @@ private:
     EditClass *classedit;
     Results *resultobj;
     DisplayTable *disptable;
+
     StudentDB database;
+
+    studenthistory *historystudent;
+    QuizHistorywindow *windowhistory;
 
 };
 

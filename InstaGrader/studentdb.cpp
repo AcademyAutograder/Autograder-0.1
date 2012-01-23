@@ -176,10 +176,11 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
         qDebug() << "SetDefaults";
     for (int i =0; i < quizVector.size(); i++)
     {
+        qDebug() << quizVector[i].getRunTimeString();
 
-        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector[i].getRunTimeString() + ", " + quizName + "Status='" + quizVector[i].getStatus() + "', " + quizName +"Reason='" + quizVector[i].getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getStudentName() +"'";
+        QString updateStudent = "UPDATE gradetable SET " + quizName + "CompileTime=" + quizVector[i].getRunTimeString() + ", " + quizName + "Status='" + quizVector[i].getStatus() + "', " + quizName +"Reason='" + quizVector[i].getFailReason() + "', " + quizName +"DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getName() +"'";
         if(q.exec(updateStudent))
-            qDebug() << "Set Student " << quizVector[i].getStudentName();
+            qDebug() << "Set Student " << quizVector[i].getName();
     }
 }
 // void newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
