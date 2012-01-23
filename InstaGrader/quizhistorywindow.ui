@@ -33,7 +33,7 @@
     <string>Quiz History</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>40</x>
