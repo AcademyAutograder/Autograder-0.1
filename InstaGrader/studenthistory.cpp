@@ -6,9 +6,9 @@ studenthistory::studenthistory(QWidget *parent) :
     ui(new Ui::studenthistory)
 {
     ui->setupUi(this);
-    //listmodel = new QStringListModel (this);
-    //listmodel->setStringList(list);
-    //ui->listView->setModel(listmodel);
+    listmodel = new QStringListModel (this);
+    listmodel->setStringList(list);
+    ui->listView->setModel(listmodel);
 }
 
 studenthistory::~studenthistory()
