@@ -10,9 +10,10 @@ QuizHistorywindow::QuizHistorywindow(QWidget *parent) :
     ui->setupUi(this);
     listmodel = new QStringListModel (this);
     list = database.getQuizzes();
-    listmodel->setStringList(list);
+    //listmodel->setStringList(list);
+    listmodel->setStringList(database.getQuizzes());
     ui->listView->setModel(listmodel);
-
+    ui->listView->setEditTriggers (QAbstractItemView::NoEditTriggers);
 }
 
 QuizHistorywindow::~QuizHistorywindow()
@@ -21,7 +22,7 @@ QuizHistorywindow::~QuizHistorywindow()
 }
 
 
-void QuizHistorywindow::on_tableView_activated(const QModelIndex &index)
+void QuizHistorywindow::on_listView_activated(const QModelIndex &index)
 {
     tablecommon = new commontable;
     tablecommon->show();

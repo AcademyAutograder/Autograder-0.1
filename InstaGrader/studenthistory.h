@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "commontable.h"
 #include <QStringListModel>
+#include "studentdb.h"
 
 namespace Ui {
 class studenthistory;
@@ -21,11 +22,12 @@ public:
     QStringListModel *listmodel;
 private slots:
 
-    void on_tableView_activated(const QModelIndex &index);
+    void on_listView_activated(const QModelIndex &index);
 
 private:
     Ui::studenthistory *ui;
     commontable *tablecommonstudent;
+    StudentDB database;
 };
 
 #endif // STUDENTHISTORY_H
