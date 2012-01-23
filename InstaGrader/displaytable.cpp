@@ -16,22 +16,4 @@ DisplayTable::~DisplayTable()
     delete ui;
 }
 
-void DisplayTable::on_pushButton9_clicked()
-{
 
-}
-
-void DisplayTable::on_pushButton10_clicked()
-{
-
-}
-
-void DisplayTable::on_pushButton11_clicked()
-{
-
-}
-
-void DisplayTable::on_pushButton12_clicked()
-{
-
-}
