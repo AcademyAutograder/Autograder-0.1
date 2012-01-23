@@ -12,7 +12,7 @@ void StudentDB::openDB(int n)
     if (db.open())
         qDebug() << "Open" << dbName;
     QSqlQuery q;
-    q.exec("CREATE TABLE gradetable (studentname varchar(30), id varchar (30)");
+    q.exec("CREATE TABLE IF NOT EXISTS gradetable (studentname varchar(30), id varchar (30))");
 }
 
 void StudentDB::newStudent(QString &studentName)

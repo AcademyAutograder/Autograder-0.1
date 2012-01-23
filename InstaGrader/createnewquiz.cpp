@@ -29,11 +29,6 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     ui->comboBox->addItem("11th Grade");
     ui->comboBox->addItem("12th Grade");
 
-<<<<<<< HEAD
-=======
-    database.openDB(9);
-
->>>>>>> 0ad371140270636d15d391f4e5090e5b8290ebf2
 }
 
 CreateNewQuiz::~CreateNewQuiz()
