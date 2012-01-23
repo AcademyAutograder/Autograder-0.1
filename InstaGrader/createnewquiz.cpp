@@ -23,6 +23,10 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     testcase = "notempty"; //Initialzized so that there won't be any checking of if file with blank name exists
     ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
     filemodel = new QFileSystemModel (this);
+    ui->comboBox->addItem("9th Grade");
+    ui->comboBox->addItem("10th Grade");
+    ui->comboBox->addItem("11th Grade");
+    ui->comboBox->addItem("12th Grade");
 }
 
 CreateNewQuiz::~CreateNewQuiz()
@@ -95,7 +99,9 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
 
     exectime = ui->exectimeLineEdit->text().toInt();
-
+    MainWindow &instance();
+    instance().grade = ui->comboBox->currentIndex();
+    grade = ui->comboBox->currentIndex();
     qDebug() << quizName;
 
     //StudentDB mainDB(11);

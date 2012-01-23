@@ -5,6 +5,7 @@
 #include "ui_results.h"
 #include <QTextStream>
 #include "displaytable.h"
+#include "studenthistory.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -65,4 +66,16 @@ void MainWindow::on_actionOpen_class_records_triggered()
 void MainWindow::on_actionOpen_triggered()
 {
 
+}
+
+void MainWindow::on_actionQuiz_History_triggered()
+{
+    historystudent = new studenthistory;
+    historystudent->exec();
+}
+
+void MainWindow::on_actionResults_triggered()
+{
+    windowhistory = new  QuizHistorywindow;
+    windowhistory->exec();
 }

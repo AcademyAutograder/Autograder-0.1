@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     createnewquiz.cpp \
     displaytable.cpp \
     choosegrade.cpp \
-    compiledisp.cpp
+    compiledisp.cpp \
+    quizhistorywindow.cpp \
+    studenthistory.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -33,7 +35,9 @@ HEADERS  += mainwindow.h \
     createnewquiz.h \
     displaytable.h \
     choosegrade.h \
-    compiledisp.h
+    compiledisp.h \
+    quizhistorywindow.h \
+    studenthistory.h
 
 FORMS    += \
     mainwindow.ui \
@@ -42,7 +46,9 @@ FORMS    += \
     createnewquiz.ui \
     displaytable.ui \
     choosegrade.ui \
-    compiledisp.ui
+    compiledisp.ui \
+    quizhistorywindow.ui \
+    studenthistory.ui
 
 
 RESOURCES += \
