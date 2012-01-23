@@ -1,5 +1,6 @@
 #include "studenthistory.h"
 #include "ui_studenthistory.h"
+#include "studentdb.h"
 
 studenthistory::studenthistory(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +10,7 @@ studenthistory::studenthistory(QWidget *parent) :
     listmodel = new QStringListModel (this);
     listmodel->setStringList(list);
     ui->listView->setModel(listmodel);
+    listmodel->setStringList(database.getNames());
 }
 
 studenthistory::~studenthistory()
@@ -16,7 +18,7 @@ studenthistory::~studenthistory()
     delete ui;
 }
 
-void studenthistory::on_tableView_activated(const QModelIndex &index)
+void studenthistory::on_listView_activated(const QModelIndex &index)
 {
     tablecommonstudent = new commontable;
     tablecommonstudent -> show();
