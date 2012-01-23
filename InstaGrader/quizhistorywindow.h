@@ -19,13 +19,13 @@ public:
     
 private slots:
 
-    void on_listView_activated(const QModelIndex &index);
+    void on_tableView_activated(const QModelIndex &index);
 
 private:
     Ui::QuizHistorywindow *ui;
     commontable *tablecommon;
-    QStringList list;
-    QStringListModel *listmodel;
+    //QStringList list;
+    //QStringListModel *listmodel;
 };
 
 #endif // QUIZHISTORYWINDOW_H

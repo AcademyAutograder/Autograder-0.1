@@ -6,9 +6,9 @@ QuizHistorywindow::QuizHistorywindow(QWidget *parent) :
     ui(new Ui::QuizHistorywindow)
 {
     ui->setupUi(this);
-    listmodel = new QStringListModel (this);
-    listmodel->setStringList(list);
-    ui->listView->setModel(listmodel);
+    //listmodel = new QStringListModel (this);
+    //listmodel->setStringList(list);
+   // ui->listView->setModel(listmodel);
 }
 
 QuizHistorywindow::~QuizHistorywindow()
@@ -17,7 +17,7 @@ QuizHistorywindow::~QuizHistorywindow()
 }
 
 
-void QuizHistorywindow::on_listView_activated(const QModelIndex &index)
+void QuizHistorywindow::on_tableView_activated(const QModelIndex &index)
 {
     tablecommon = new commontable;
     tablecommon->show();
