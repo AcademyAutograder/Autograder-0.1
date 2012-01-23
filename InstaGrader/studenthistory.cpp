@@ -23,4 +23,5 @@ void studenthistory::on_listView_activated(const QModelIndex &index)
 {
     tablecommonstudent = new commontable;
     tablecommonstudent -> show();
+    QString name = index.data().toString();
 }

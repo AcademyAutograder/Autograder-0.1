@@ -24,6 +24,7 @@ QuizHistorywindow::~QuizHistorywindow()
 
 void QuizHistorywindow::on_listView_activated(const QModelIndex &index)
 {
+    QString name = index.data().toString();
     tablecommon = new commontable;
     tablecommon->show();
 }
