@@ -11,11 +11,12 @@ class Quiz
 protected:
     QString name;
     float runTime;
+    QString failReason;
 public:
     Quiz();
     Quiz(QString &);
     void compile(QString &cppFileName);
-    void execute(const QString &) ;
+    void execute(const QString &, int) ;
     QString getName();
     void setName(const QString &);
 
@@ -25,7 +26,6 @@ class StudentQuiz : public Quiz
 protected:
     bool status;
     QDateTime timeOfDelivery;
-    QString failReason;
     int rank;
     QString studentName;
 public:

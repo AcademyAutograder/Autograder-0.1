@@ -151,8 +151,10 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     displcompile->addTextToBox(test);
     displcompile->raise();
 
+
     for(int x = 0; x < ve.size(); x++)
     {
+        displcompile->update();
         QString compFile = fDir + "/" + dirName[x+2];
         ve[x].compile(compFile);
     }
@@ -160,7 +162,7 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     for(int x = 0; x < ve.size(); x++)
     {
         QString timeHolder;
-        ve[x].execute(testcase);
+        ve[x].execute(testcase,exectime);
         ve[x].grade(ans);
         timeHolder.setNum(ve[x].getRunTime());
         if(ve[x].getStatus())

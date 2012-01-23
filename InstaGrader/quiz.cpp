@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
+#include "mainwindow.h"
 
 #include "quiz.h"
 
@@ -20,11 +21,6 @@ Quiz::Quiz(QString &fName)
 }
 void Quiz::compile(QString &cppFileName)
 {
-    /*
-    QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
-    QString command = "\"" + hComp + " \"" + name + ".cpp\"\"";
-    system(command.toStdString().c_str());
-    */
     QProcess comp;
     comp.setStandardOutputFile("compileOutput.txt");
     QStringList f;
@@ -35,10 +31,10 @@ void Quiz::compile(QString &cppFileName)
              return;
     if(!comp.waitForFinished())
         return;
-
 }
-void Quiz::execute(const QString &testCases)
+void Quiz::execute(const QString &testCases,int execTime)
 {
+
     QTime t;
     QProcess exec;
     exec.setStandardInputFile(testCases);
@@ -49,8 +45,11 @@ void Quiz::execute(const QString &testCases)
              return;
     t.start();
 
-    if (!exec.waitForFinished(1000))
+    if (!exec.waitForFinished(execTime))
+    {
         this->runTime = -1;
+        failReason = "HANG";
+    }
     else
     {
         runTime = t.elapsed();
@@ -100,7 +99,7 @@ void StudentQuiz::grade(QString &anFileName)
         if(stud != ans)
         {
             mistake = false;
-            //break;
+            failReason = "INCORRECT OUTPUT";
         }
     }
     if(mistake)
