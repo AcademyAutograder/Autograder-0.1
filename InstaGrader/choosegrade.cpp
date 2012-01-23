@@ -1,6 +1,7 @@
 #include "choosegrade.h"
 #include "ui_choosegrade.h"
 #include "mainwindow.h"
+#include "studentdb.h"
 
 ChooseGrade::ChooseGrade(QWidget *parent) :
     QDialog(parent),
@@ -22,5 +23,7 @@ void ChooseGrade::on_pushButton_clicked()
 {
     MainWindow &instance();
     instance().grade = ui->comboBox->currentIndex();
+    database.closeDB();
+    database.openDB(instance().grade + 9);
     close();
 }

@@ -1,6 +1,6 @@
 #ifndef CHOOSEGRADE_H
 #define CHOOSEGRADE_H
-
+#include "studentdb.h"
 #include <QDialog>
 
 namespace Ui {
@@ -20,6 +20,7 @@ private slots:
 
 private:
     Ui::ChooseGrade *ui;
+    StudentDB database;
 };
 
 #endif // CHOOSEGRADE_H

@@ -1,5 +1,6 @@
 #include "studenthistory.h"
 #include "ui_studenthistory.h"
+#include "studentdb.h"
 
 
 studenthistory::studenthistory(QWidget *parent) :
@@ -8,7 +9,6 @@ studenthistory::studenthistory(QWidget *parent) :
 {
     ui->setupUi(this);
     listmodel = new QStringListModel (this);
-    //listmodel->setStringList(list);
     listmodel->setStringList(database.getNames());
     ui->listView->setModel(listmodel);
     ui->listView->setEditTriggers (QAbstractItemView::NoEditTriggers);

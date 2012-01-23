@@ -71,6 +71,7 @@ void MainWindow::on_actionOpen_triggered()
 
 }
 
+
 void MainWindow::on_actionQuiz_History_triggered()
 {
     historystudent = new studenthistory;
@@ -82,3 +83,4 @@ void MainWindow::on_actionResults_triggered()
     windowhistory = new  QuizHistorywindow;
     windowhistory->show();
 }
+

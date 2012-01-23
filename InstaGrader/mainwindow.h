@@ -6,9 +6,23 @@
 #include "editclass.h"
 #include "results.h"
 #include "displaytable.h"
+
+
+#include "studentdb.h"
+
+
+
+//#include "studentdb.h"
+
+#include "studenthistory.h"
+#include "quizhistorywindow.h"
+
+
+
 #include "studentdb.h"
 #include "studenthistory.h"
 #include "quizhistorywindow.h"
+
 
 
 namespace Ui {
@@ -41,11 +55,16 @@ private slots:
 
     void on_actionOpen_class_records_triggered();
 
+
+    //void on_actionView_Student_Records_triggered();
+
     void on_actionOpen_triggered();
+
 
     void on_actionQuiz_History_triggered();
 
     void on_actionResults_triggered();
+
 
 private:
     explicit MainWindow(QWidget *parent = 0);
@@ -54,10 +73,11 @@ private:
     EditClass *classedit;
     Results *resultobj;
     DisplayTable *disptable;
+
+    //StudentDB database;
+
     studenthistory *historystudent;
     QuizHistorywindow *windowhistory;
-
-
 
 
 };

@@ -29,6 +29,12 @@ void StudentDB::deleteStudent(QString &studentName)
    myQuery += studentName;
    myQuery +="'";
    query.exec(myQuery);
+   QStringList quiz = getQuizzes();
+   for(int i = 0; i < quiz.length(); i++)
+   {
+       QString del = "DELETE FROM " + quiz.at(i) + "WHERE studentname='" + studentName +"'";
+       query.exec(del);
+   }
 }
 
 QStringList StudentDB::getNames()
@@ -36,14 +42,29 @@ QStringList StudentDB::getNames()
     QStringList studentList;
     QSqlQuery q;
 
+    q.exec("SELECT * FROM gradetable ORDER BY studentName");
+    q.exec("SELECT studentname FROM gradetable ");
+
+    //int reps = q.size();
+    //QSqlRecord rec = q.record();
+    //int reps = rec.size();
+
+
+    q.exec("SELECT * FROM gradetable ORDER BY studentName");
+
+
+
     q.exec("SELECT studentname FROM studentlist ");
     q.exec("SELECT * FROM studentlist ORDER BY studentName");
+
     while(q.next())
     {
         studentList += q.value(0).toString();
     }
+
     return studentList;
 }
+
 QStringList StudentDB::getQuizzes()
 {
     QStringList quizList;
@@ -57,6 +78,7 @@ QStringList StudentDB::getQuizzes()
     }
     return quizList;
 }
+
 bool StudentDB::studentExist(QString &studentName)
 {
     bool exist;
@@ -88,6 +110,12 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
     q.exec(setDefaults);
     for (int i =0; i < quizVector.size(); i++)
     {
+        qDebug() << quizVector[i].getFailReason();
+        qDebug() << quizVector[i].getName();
+        qDebug() << quizVector[i].getRunTimeString();
+        qDebug() << quizVector[i].getStatus();
+        qDebug() << quizVector[i].getTimeString();
+
         QString updateStudent = "UPDATE " + quizName + " SET ExecuteTime='" + quizVector[i].getRunTimeString() + "', Status='" + quizVector[i].getStatus() + "', Reason='" + quizVector[i].getFailReason() + "', DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getName() +"'";
         q.exec(updateStudent);
     }
@@ -104,4 +132,12 @@ QString StudentDB::generateID(QString &firstName,QString &lastName)
 void StudentDB::closeDB()
 {
     db.close();
+}
+void StudentDB::deleteQuiz(QString &quizName)
+{
+    QSqlQuery q;
+    QString query = "DROP TABLE " + quizName;
+    q.exec(query);
+    QString remove = "DELETE FROM quizlist WHERE quizname='" + quizName + "'";
+    q.exec(remove);
 }
