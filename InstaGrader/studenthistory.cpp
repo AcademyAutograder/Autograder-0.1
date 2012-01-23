@@ -16,7 +16,9 @@ studenthistory::~studenthistory()
     delete ui;
 }
 
-void studenthistory::on_pushButton_5_clicked()
+
+
+void studenthistory::on_listView_activated(const QModelIndex &index)
 {
     tablecommonstudent = new commontable;
     tablecommonstudent -> show();

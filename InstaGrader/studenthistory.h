@@ -21,7 +21,7 @@ public:
     QStringListModel *listmodel;
 private slots:
 
-    void on_pushButton_5_clicked();
+    void on_listView_activated(const QModelIndex &index);
 
 private:
     Ui::studenthistory *ui;

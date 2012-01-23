@@ -17,9 +17,8 @@ QuizHistorywindow::~QuizHistorywindow()
 }
 
 
-void QuizHistorywindow::on_pushButton_5_clicked()
+void QuizHistorywindow::on_listView_activated(const QModelIndex &index)
 {
-
-   tablecommon = new commontable;
-   tablecommon->show();
+    tablecommon = new commontable;
+    tablecommon->show();
 }
