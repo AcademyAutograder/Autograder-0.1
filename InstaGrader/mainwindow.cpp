@@ -37,7 +37,9 @@ void MainWindow::on_actionEdit_class_triggered()
 void MainWindow::on_Homeresultbutton_clicked()
 {
     resultobj = new Results;
-    resultobj -> exec();
+
+    resultobj->displayResults(currentQuizName);
+    resultobj -> show();
 }
 
 void MainWindow::on_actionQuit_triggered()

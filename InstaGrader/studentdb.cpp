@@ -90,7 +90,7 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
     QSqlQuery q;
     QString insert = "INSERT INTO quizlist (quizname) VALUES ('" + quizName + "')";
     q.exec(insert);
-    QString newQuizTable = "CREATE TABLE IF NOT EXISTS " + quizName + " (StudentName varchar(30), CompileTime real, Status varchar(30), Reason varchar(30), DeliveryTime varchar(30))";
+    QString newQuizTable = "CREATE TABLE IF NOT EXISTS " + quizName + " (StudentName varchar(30), ExecuteTime real, Status varchar(30), Reason varchar(30), DeliveryTime varchar(30))";
     q.exec(newQuizTable);
 
     QStringList names = getNames();
@@ -100,11 +100,13 @@ void StudentDB::newQuiz(QString quizName, QVector<StudentQuiz> quizVector)
         q.exec(insert);
     }
 
-    QString setDefaults = "UPDATE " + quizName + " SET CompileTime=0.00, Status='FAIL', Reason='Did Not Submit', DeliveryTime='0:00'";
+    QString setDefaults = "UPDATE " + quizName + " SET ExecuteTime=0.00, Status='FAIL', Reason='Did Not Submit', DeliveryTime='0:00'";
     q.exec(setDefaults);
     for (int i =0; i < quizVector.size(); i++)
     {
-        QString updateStudent = "UPDATE " + quizName + " SET CompileTime=" + quizVector[i].getRunTimeString() + ", Status='" + quizVector[i].getStatus() + "', Reason='" + quizVector[i].getFailReason() + "', DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getName() +"'";
+        qDebug() << quizVector[i].getFailReason();
+        qDebug() << quizVector[i].getName();
+        QString updateStudent = "UPDATE " + quizName + " SET ExecuteTime=" + quizVector[i].getRunTimeString() + ", Status='" + quizVector[i].getStatus() + "', Reason='" + quizVector[i].getFailReason() + "', DeliveryTime='" + quizVector[i].getTimeString() +"' WHERE studentname='" + quizVector[i].getName() +"'";
         q.exec(updateStudent);
     }
 

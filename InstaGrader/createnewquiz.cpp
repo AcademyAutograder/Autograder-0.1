@@ -100,10 +100,12 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 
     exectime = ui->exectimeLineEdit->text().toInt();
     qDebug() << quizName;
+    MainWindow &instance();
+    instance().currentQuizName = quizName;
 
     //StudentDB mainDB(11);
     // Need to acquire database number somehow
-    MainWindow &instance();
+
     QString dir1 = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput";
 
     QFile read(ans);
@@ -150,6 +152,7 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     for(int x = 0; x < ve.size(); x++)
     {
         displcompile->update();
+        displcompile ->show();
         QString compFile = fDir + "/" + dirName[x+2];
         ve[x].compile(compFile);
     }
@@ -175,6 +178,9 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     instance().ui -> Homestudentlist ->setModel(filemodel);
     instance().ui->Homestudentlist->setRootIndex(filemodel->index(dir1));
     instance().ui->HomeAnstxt->setPlainText(ansstr);
+    Results r;
+    r.displayResults(quizName);
+    r.exec();
     close();
 
 }
