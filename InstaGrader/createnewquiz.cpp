@@ -103,9 +103,6 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     MainWindow &instance();
     instance().currentQuizName = quizName;
 
-    //StudentDB mainDB(11);
-    // Need to acquire database number somehow
-
     QString dir1 = "C:/Users/Ben/Autograder-0.1/MyQuizFiles/Quiz1/StudentOutput";
 
     QFile read(ans);
@@ -125,10 +122,7 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     dirName = directory.entryList();
     for(int g = 2; g < dirName.size(); g++)
     {
-
-
         QString dInter = dirName.at(g);
-
         dInter.chop(4);
         StudentQuiz sQInter(dInter);
         sQInter.setTOD(fileInfo.at(g).lastModified());
@@ -136,33 +130,40 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         dirs += fDir + "/" + dirName.at(g)+ " ";
     }   
 
-/*
-    ***Old Compile Method***
-    QString hComp = ("\"../InstaGrader/HiddenCompile.exe\"");
-    QString command = "\"" + hComp + " " + dirs + "\"";
-    system(command.toStdString().c_str());
-*/
     displcompile = new compiledisp;
     displcompile ->show();
-    QString test = "Fish";
+    QString test = "Compiling";
     displcompile->addTextToBox(test);
     displcompile->raise();
 
 
     for(int x = 0; x < ve.size(); x++)
     {
+        QString compDisp = ve[x].getName() + ".cpp Compiling...";
+        displcompile->addTextToBox(compDisp);
         displcompile->update();
         displcompile ->show();
         QString compFile = fDir + "/" + dirName[x+2];
         ve[x].compile(compFile);
     }
+    QString l = "-----";
+    displcompile->addTextToBox(l);
+    QString nest = "Executing";
+    displcompile->addTextToBox(nest);
 
     for(int x = 0; x < ve.size(); x++)
     {
+        QString execDisp = ve[x].getName() + ".exe Executing...";
+        displcompile->addTextToBox(execDisp);
+        displcompile->update();
+        displcompile ->show();
         QString timeHolder;
         ve[x].execute(testcase,exectime);
-        if(ve[x].getStatus() != "HANG")
+        qDebug() << ve[x].getFailReason();
+        if(ve[x].getFailReason() != "HANG")
             ve[x].grade(ans);
+        else
+            ve[x].setStatus(0);
         timeHolder.setNum(ve[x].getRunTime());
     }
     database.newQuiz(quizName,ve);
