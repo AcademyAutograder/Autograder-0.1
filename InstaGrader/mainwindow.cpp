@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->showMaximized();
-    classedit = new EditClass;
+
 }
 
 MainWindow::~MainWindow()
@@ -29,6 +29,7 @@ void MainWindow::on_actionNew_Quiz_triggered()
 
 void MainWindow::on_actionEdit_class_triggered()
 {
+    classedit = new EditClass;
     classedit -> exec();
 }
 

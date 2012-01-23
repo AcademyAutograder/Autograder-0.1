@@ -25,7 +25,6 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     filemodel = new QFileSystemModel (this);
 
 
-    database.openDB(9);
 }
 
 CreateNewQuiz::~CreateNewQuiz()
@@ -140,6 +139,11 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     QString command = "\"" + hComp + " " + dirs + "\"";
     system(command.toStdString().c_str());
 */
+    displcompile = new compiledisp;
+    displcompile ->show();
+    QString test = "Fish";
+    displcompile->addTextToBox(test);
+    displcompile->raise();
 
     for(int x = 0; x < ve.size(); x++)
     {

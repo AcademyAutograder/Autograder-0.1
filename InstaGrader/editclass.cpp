@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include "student.h"
 #include "studentdb.h"
+#include "mainwindow.h"
 //QStringList EditClass::editclasslist = (QStringList() << "");
 
 EditClass::EditClass(QWidget *parent) :
@@ -41,7 +42,6 @@ EditClass::EditClass(QWidget *parent) :
     model[2]->setStringList(editclasslist);
     model[3]->setStringList(editclasslist);
 
-    database.openDB(9);
     model[0]->setStringList(database.getNames());
 
     ui->editclasslistView->setModel(model[modelnum]);
