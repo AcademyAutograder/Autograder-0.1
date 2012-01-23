@@ -24,6 +24,7 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
     filemodel = new QFileSystemModel (this);
 
+
     database.openDB(9);
 
 }
