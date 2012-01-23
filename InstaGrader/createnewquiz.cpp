@@ -12,6 +12,7 @@
 #include "quiz.h"
 #include "studentdb.h"
 #include <QDateTime>
+#include "ui_compiledisp.h"
 
 CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     QDialog(parent),
@@ -92,6 +93,8 @@ void CreateNewQuiz::on_ChooseAnswerlineedit_textChanged(const QString &arg1)
 
 void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
+
+    exectime = ui->exectimeLineEdit->text().toInt();
 
     qDebug() << quizName;
 

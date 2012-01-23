@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QStringListModel>
 #include <QFileSystemModel>
-
+#include "compiledisp.h"
 
 namespace Ui {
 class CreateNewQuiz;
@@ -41,6 +41,8 @@ private slots:
 
 private:
     QString dir, testcase, ans, quizName;
+    int exectime; //available only after pressing gradebutton
+    compiledisp *displcompile;
 
 };
 

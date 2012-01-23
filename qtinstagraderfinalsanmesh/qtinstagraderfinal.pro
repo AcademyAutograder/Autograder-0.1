@@ -14,17 +14,20 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     createnewquiz.cpp \
     editclass.cpp \
-    results.cpp
+    results.cpp \
+    openfile.cpp
 
 HEADERS  += mainwindow.h \
     createnewquiz.h \
     editclass.h \
-    results.h
+    results.h \
+    openfile.h
 
 FORMS    += mainwindow.ui \
     createnewquiz.ui \
     editclass.ui \
-    results.ui
+    results.ui \
+    openfile.ui
 
 RESOURCES += \
     qtinstagraderfinal.qrc

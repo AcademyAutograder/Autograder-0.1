@@ -124,18 +124,21 @@ QStringList StudentDB::getNames()
 {
     QStringList studentList;
     QSqlQuery q;
-
+    q.exec("SELECT * FROM gradetable ORDER BY studentName");
     q.exec("SELECT studentname FROM gradetable ");
     //int reps = q.size();
     //QSqlRecord rec = q.record();
     //int reps = rec.size();
-    q.exec("SELECT * FROM gradetable ORDER BY studentName");
+
     while(q.next())
     {
         studentList += q.value(0).toString();
     }
+
     return studentList;
 }
+
+
 bool StudentDB::studentExist(QString &studentName)
 {
     bool exist;

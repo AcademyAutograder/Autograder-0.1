@@ -62,4 +62,8 @@ void MainWindow::on_actionOpen_class_records_triggered()
     disptable->show();
 }
 
+void MainWindow::on_actionOpen_triggered()
+{
+
+}
 

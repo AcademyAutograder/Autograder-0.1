@@ -1,6 +1,7 @@
 #include <QtGui/QApplication>
 #include "mainwindow.h"
 #include "studentdb.h"
+#include "choosegrade.h"
 
 
 
@@ -13,6 +14,8 @@ MainWindow &instance()
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    ChooseGrade b;
+    b.exec();
     instance().show();
     return a.exec();
 }

@@ -29,6 +29,7 @@ public:
     void deleteStudent(QString &);
     QStringList getNames();
 
+
     //void pushDB(int);
     //void pullDB(int);
     QString generateID(QString &, QString &);
