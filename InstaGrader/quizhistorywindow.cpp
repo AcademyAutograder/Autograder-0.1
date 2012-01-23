@@ -11,7 +11,7 @@ QuizHistorywindow::QuizHistorywindow(QWidget *parent) :
     listmodel = new QStringListModel (this);
     list = database.getQuizzes();
     listmodel->setStringList(list);
-    ui->tableView->setModel(listmodel);
+    ui->listView->setModel(listmodel);
 
 }
 
