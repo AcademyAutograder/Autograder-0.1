@@ -13,6 +13,7 @@ class compiledisp : public QDialog
     
 public:
     explicit compiledisp(QWidget *parent = 0);
+    void addTextToBox(QString &);
     ~compiledisp();
     
 private:

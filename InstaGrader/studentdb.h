@@ -30,11 +30,13 @@ public:
     QStringList getNames();
 
 
+
     //void pushDB(int);
     //void pullDB(int);
+
     QString generateID(QString &, QString &);
-    //void newQuiz(QString &, QVector<int>, QVector<QString>);
     void newQuiz(QString, QVector<StudentQuiz>);
+    void deleteQuiz(QString &);
     bool studentExist(QString &);
     void closeDB();
 

@@ -12,3 +12,7 @@ compiledisp::~compiledisp()
 {
     delete ui;
 }
+void compiledisp::addTextToBox(QString &text)
+{
+    ui->compilinglineedit->appendPlainText(text);
+}

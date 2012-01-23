@@ -29,8 +29,11 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     ui->comboBox->addItem("11th Grade");
     ui->comboBox->addItem("12th Grade");
 
+<<<<<<< HEAD
+=======
     database.openDB(9);
 
+>>>>>>> 0ad371140270636d15d391f4e5090e5b8290ebf2
 }
 
 CreateNewQuiz::~CreateNewQuiz()
@@ -147,6 +150,11 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
     QString command = "\"" + hComp + " " + dirs + "\"";
     system(command.toStdString().c_str());
 */
+    displcompile = new compiledisp;
+    displcompile ->show();
+    QString test = "Fish";
+    displcompile->addTextToBox(test);
+    displcompile->raise();
 
     for(int x = 0; x < ve.size(); x++)
     {

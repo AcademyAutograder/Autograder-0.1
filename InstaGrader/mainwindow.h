@@ -6,11 +6,16 @@
 #include "editclass.h"
 #include "results.h"
 #include "displaytable.h"
+
 #include "studentdb.h"
 
 
+
+#include "studentdb.h"
+
 #include "studenthistory.h"
 #include "quizhistorywindow.h"
+
 
 
 namespace Ui {
@@ -25,6 +30,7 @@ public:
     friend MainWindow &instance();
     Ui::MainWindow *ui;
     int grade; //0 = 9th, 1 = 10th, etc;
+    StudentDB database;
 
 private slots:
     void on_actionNew_Quiz_triggered();
@@ -64,6 +70,7 @@ private:
 
     studenthistory *historystudent;
     QuizHistorywindow *windowhistory;
+
 
 };
 

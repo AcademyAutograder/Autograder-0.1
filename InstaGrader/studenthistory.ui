@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>310</x>
      <y>360</y>
      <width>75</width>
      <height>23</height>
@@ -46,20 +46,10 @@
     <string>Student History</string>
    </property>
   </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>40</y>
-     <width>571</width>
-     <height>291</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>130</x>
      <y>360</y>
      <width>75</width>
      <height>23</height>
@@ -85,7 +75,7 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>220</x>
      <y>360</y>
      <width>75</width>
      <height>23</height>
@@ -93,6 +83,29 @@
    </property>
    <property name="text">
     <string>11th grade</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>360</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open record</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>601</width>
+     <height>301</height>
+    </rect>
    </property>
   </widget>
  </widget>
