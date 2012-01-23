@@ -20,14 +20,12 @@ public:
     explicit EditClass(QWidget *parent = 0);
     ~EditClass();
     //QStringListModel *nineclassmodel, *tenclassmodel, *elevenclassmodel, *twelveclassmodel;
-    QStringListModel *model[4];
+    QStringListModel *model;
     QStringList editclasslist;
 
     
 private slots:
     void on_addstudbutton_clicked();
-
-    void on_gradecomboBox_activated(int index);
 
     void on_insertstudbutton_clicked();
 

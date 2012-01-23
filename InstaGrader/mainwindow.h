@@ -6,12 +6,10 @@
 #include "editclass.h"
 #include "results.h"
 #include "displaytable.h"
-<<<<<<< HEAD
 #include "studentdb.h"
-=======
 #include "studenthistory.h"
 #include "quizhistorywindow.h"
->>>>>>> 0ad371140270636d15d391f4e5090e5b8290ebf2
+
 
 namespace Ui {
 class MainWindow;

@@ -6,31 +6,14 @@ studenthistory::studenthistory(QWidget *parent) :
     ui(new Ui::studenthistory)
 {
     ui->setupUi(this);
+    listmodel = new QStringListModel (this);
+    listmodel->setStringList(list);
+    ui->listView->setModel(listmodel);
 }
 
 studenthistory::~studenthistory()
 {
     delete ui;
-}
-
-void studenthistory::on_pushButton_clicked()
-{
-
-}
-
-void studenthistory::on_pushButton_2_clicked()
-{
-
-}
-
-void studenthistory::on_pushButton_3_clicked()
-{
-
-}
-
-void studenthistory::on_pushButton_4_clicked()
-{
-
 }
 
 void studenthistory::on_pushButton_5_clicked()
