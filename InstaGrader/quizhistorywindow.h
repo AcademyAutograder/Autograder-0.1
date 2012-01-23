@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "commontable.h"
 #include <QStringListModel>
+#include "studentdb.h"
 
 namespace Ui {
 class QuizHistorywindow;
@@ -26,6 +27,7 @@ private:
     commontable *tablecommon;
     QStringList list;
     QStringListModel *listmodel;
+    StudentDB database;
 };
 
 #endif // QUIZHISTORYWINDOW_H

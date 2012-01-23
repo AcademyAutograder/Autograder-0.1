@@ -24,6 +24,7 @@ public:
     Ui::MainWindow *ui;
     int grade; //0 = 9th, 1 = 10th, etc;
     StudentDB database;
+    QString currentQuizName;
 
 private slots:
     void on_actionNew_Quiz_triggered();
@@ -55,6 +56,7 @@ private:
     DisplayTable *disptable;
     studenthistory *historystudent;
     QuizHistorywindow *windowhistory;
+
 
 
 

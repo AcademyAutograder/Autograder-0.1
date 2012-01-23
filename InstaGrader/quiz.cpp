@@ -47,7 +47,7 @@ void Quiz::execute(const QString &testCases,int execTime)
 
     if (!exec.waitForFinished(execTime))
     {
-        this->runTime = -1;
+        this->runTime = 0;
         failReason = "HANG";
     }
     else
@@ -107,11 +107,13 @@ void StudentQuiz::grade(QString &anFileName)
         status = true;
         failReason = "N/A";
     }
-    else
+    else if(failReason != "INCORRECT OUTPUT")
     {
         status = false;
-        failReason = "INCORRECT OUTPUT";
+        failReason = "DID NOT COMPILE";
     }
+    else
+        status = false;
 }
 void StudentQuiz::overrideStat()
 {
