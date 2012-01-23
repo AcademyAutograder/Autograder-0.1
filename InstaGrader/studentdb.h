@@ -28,6 +28,7 @@ public:
     void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
+    QStringList getQuizzes();
     QString generateID(QString &, QString &);
     void newQuiz(QString, QVector<StudentQuiz>);
     void deleteQuiz(QString &);
