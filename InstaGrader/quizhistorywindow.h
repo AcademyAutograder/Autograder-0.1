@@ -20,7 +20,11 @@ public:
     
 private slots:
 
-    void on_listView_activated(const QModelIndex &index);
+   // void on_listView_activated(const QModelIndex &index);
+
+    void on_openpushButton_clicked();
+
+    void on_deletepushButton_clicked();
 
 private:
     Ui::QuizHistorywindow *ui;

@@ -51,11 +51,6 @@ private slots:
 
     void on_Homestudentlist_activated(const QModelIndex &index);
 
-
-
-    void on_actionOpen_class_records_triggered();
-
-
     //void on_actionView_Student_Records_triggered();
 
     void on_actionOpen_triggered();

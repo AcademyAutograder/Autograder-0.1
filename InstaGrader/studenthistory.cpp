@@ -12,16 +12,25 @@ studenthistory::studenthistory(QWidget *parent) :
     listmodel->setStringList(database.getNames());
     ui->listView->setModel(listmodel);
     ui->listView->setEditTriggers (QAbstractItemView::NoEditTriggers);
+   //selection = ui->listView->selectionModel();
 }
 
 studenthistory::~studenthistory()
 {
     delete ui;
 }
-
+/*
 void studenthistory::on_listView_activated(const QModelIndex &index)
 {
     tablecommonstudent = new commontable;
     tablecommonstudent -> show();
     QString name = index.data().toString();
+}
+*/
+void studenthistory::on_openpushButton_clicked()
+{
+    QModelIndex index = ui->listView->selectionModel()->currentIndex();
+    QString name = index.data().toString();
+    tablecommonstudent = new commontable;
+    tablecommonstudent -> show();
 }

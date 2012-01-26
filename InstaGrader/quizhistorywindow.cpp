@@ -21,10 +21,23 @@ QuizHistorywindow::~QuizHistorywindow()
     delete ui;
 }
 
-
+/*
 void QuizHistorywindow::on_listView_activated(const QModelIndex &index)
 {
     QString name = index.data().toString();
     tablecommon = new commontable;
     tablecommon->show();
+}
+*/
+void QuizHistorywindow::on_openpushButton_clicked()
+{
+    QModelIndex index = ui->listView->selectionModel()->currentIndex();
+    QString name = index.data().toString();
+    tablecommon = new commontable;
+    tablecommon->show();
+}
+
+void QuizHistorywindow::on_deletepushButton_clicked()
+{
+
 }

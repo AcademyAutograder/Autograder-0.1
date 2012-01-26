@@ -20,9 +20,12 @@ public:
     QStringList editclasslist;
     QStringList list;
     QStringListModel *listmodel;
+   // QItemSelectionModel selection;
 private slots:
 
-    void on_listView_activated(const QModelIndex &index);
+ //   void on_listView_activated(const QModelIndex &index);
+
+    void on_openpushButton_clicked();
 
 private:
     Ui::studenthistory *ui;

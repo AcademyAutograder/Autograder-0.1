@@ -166,13 +166,11 @@
      <string>Class</string>
     </property>
     <addaction name="actionEdit_class"/>
-    <addaction name="actionOpen_class_records"/>
    </widget>
    <widget class="QMenu" name="menuQuiz">
     <property name="title">
      <string>Quiz</string>
     </property>
-    <addaction name="actionEdit_data"/>
     <addaction name="actionResults"/>
    </widget>
    <widget class="QMenu" name="menuStudent">

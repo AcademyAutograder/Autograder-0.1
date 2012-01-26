@@ -43,6 +43,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="openpushButton">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>360</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
