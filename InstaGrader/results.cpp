@@ -21,3 +21,8 @@ Results::~Results()
 {
     delete ui;
 }
+
+void Results::on_CreateQuizCancelbutton_clicked()
+{
+    close();
+}

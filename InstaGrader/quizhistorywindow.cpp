@@ -35,9 +35,20 @@ void QuizHistorywindow::on_openpushButton_clicked()
     QString name = index.data().toString();
     tablecommon = new commontable;
     tablecommon->show();
+    tablecommon->dispTable(name,0);
+
 }
 
 void QuizHistorywindow::on_deletepushButton_clicked()
 {
+    StudentDB f;
+    QModelIndex index = ui->listView->selectionModel()->currentIndex();
+    QString name = index.data().toString();
+    f.deleteQuiz(name);
+    listmodel->setStringList(f.getQuizzes());
+}
 
+void QuizHistorywindow::on_CreateQuizCancelbutton_clicked()
+{
+    close();
 }

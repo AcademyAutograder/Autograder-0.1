@@ -3,7 +3,6 @@
 #include <QString>
 #include <QVector>
 #include <QStringList>
-#include "student.h"
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlRecord>
@@ -22,30 +21,17 @@ private:
     QStringList quizlist12;
     int quizGrade;
 public:
-    QVector<Student> studentVector;
     StudentDB();
     void openDB(int);
     void newStudent(QString &);
     void deleteStudent(QString &);
     QStringList getNames();
-
-
-
-
-    //void pushDB(int);
-    //void pullDB(int);
-
-
     QStringList getQuizzes();
-
     QString generateID(QString &, QString &);
     void newQuiz(QString, QVector<StudentQuiz>);
     void deleteQuiz(QString &);
     bool studentExist(QString &);
     void closeDB();
-
-
-
 };
 
 #endif // STUDENTDB_H

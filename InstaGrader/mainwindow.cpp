@@ -4,7 +4,7 @@
 #include "ui_editclass.h"
 #include "ui_results.h"
 #include <QTextStream>
-#include "displaytable.h"
+
 #include "studenthistory.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -76,3 +76,8 @@ void MainWindow::on_actionResults_triggered()
     windowhistory->show();
 }
 
+
+void MainWindow::on_CreateQuizCancelbutton_clicked()
+{
+    close();
+}

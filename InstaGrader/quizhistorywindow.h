@@ -26,10 +26,11 @@ private slots:
 
     void on_deletepushButton_clicked();
 
+    void on_CreateQuizCancelbutton_clicked();
+
 private:
     Ui::QuizHistorywindow *ui;
     commontable *tablecommon;
-
     QStringList list;
     QStringListModel *listmodel;
     StudentDB database;

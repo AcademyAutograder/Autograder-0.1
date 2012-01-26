@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>530</width>
-    <height>499</height>
+    <width>340</width>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QListView" name="editclasslistView">
    <property name="geometry">
     <rect>
-     <x>23</x>
+     <x>20</x>
      <y>121</y>
-     <width>481</width>
+     <width>301</width>
      <height>301</height>
     </rect>
    </property>
@@ -26,8 +26,8 @@
   <widget class="QLabel" name="EditClasstitle">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>20</x>
+     <y>20</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -35,19 +35,22 @@
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
+   <property name="lineWidth">
+    <number>0</number>
+   </property>
    <property name="text">
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; font-style:italic;&quot;&gt;Edit Class&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Edit Class&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="addstudbutton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>60</y>
+     <x>20</x>
+     <y>70</y>
      <width>101</width>
      <height>41</height>
     </rect>
@@ -70,8 +73,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="deletestudbutton">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>60</y>
+     <x>130</x>
+     <y>70</y>
      <width>101</width>
      <height>41</height>
     </rect>
@@ -88,8 +91,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="savebutton">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>450</y>
+     <x>250</x>
+     <y>430</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -98,28 +101,17 @@ p, li { white-space: pre-wrap; }
     <string>Save</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="insertstudbutton">
+  <widget class="QPushButton" name="CreateQuizCancelbutton">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>60</y>
-     <width>101</width>
-     <height>41</height>
+     <x>170</x>
+     <y>430</y>
+     <width>75</width>
+     <height>23</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="text">
-    <string>Insert Student</string>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>16</width>
-     <height>16</height>
-    </size>
+    <string>Close</string>
    </property>
   </widget>
  </widget>

@@ -14,14 +14,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     quiz.cpp \
-    student.cpp \
     studentdb.cpp \
     results.cpp \
     editclass.cpp \
     createnewquiz.cpp \
-    displaytable.cpp \
     choosegrade.cpp \
-    compiledisp.cpp \
     quizhistorywindow.cpp \
     studenthistory.cpp \
     commontable.cpp
@@ -29,14 +26,11 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     quiz.h \
-    student.h \
     studentdb.h \
     results.h \
     editclass.h \
     createnewquiz.h \
-    displaytable.h \
     choosegrade.h \
-    compiledisp.h \
     quizhistorywindow.h \
     studenthistory.h \
     commontable.h
@@ -46,9 +40,7 @@ FORMS    += \
     results.ui \
     editclass.ui \
     createnewquiz.ui \
-    displaytable.ui \
     choosegrade.ui \
-    compiledisp.ui \
     quizhistorywindow.ui \
     studenthistory.ui \
     commontable.ui
@@ -56,6 +48,14 @@ FORMS    += \
 
 RESOURCES += \
     qtrealproj.qrc \
+
+
+
+
+
+
+
+
 
 
 

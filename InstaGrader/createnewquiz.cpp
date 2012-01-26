@@ -24,7 +24,7 @@ CreateNewQuiz::CreateNewQuiz(QWidget *parent) :
     ans = "notempty";//Initialzized so that there won't be any checking of if file with blank name exists
     filemodel = new QFileSystemModel (this);
 
-
+    ui->progressBar->hide();
     database.openDB(9);
 
 }
@@ -98,7 +98,7 @@ void CreateNewQuiz::on_ChooseAnswerlineedit_textChanged(const QString &arg1)
 void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
 {
 
-    exectime = ui->exectimeLineEdit->text().toInt();
+    exectime = ui->spinBox->value();
     qDebug() << quizName;
     MainWindow &instance();
     instance().currentQuizName = quizName;
@@ -130,33 +130,25 @@ void CreateNewQuiz::on_CreateQuizOkbutton_clicked()
         dirs += fDir + "/" + dirName.at(g)+ " ";
     }   
 
-    displcompile = new compiledisp;
-    displcompile ->show();
-    QString test = "Compiling";
-    displcompile->addTextToBox(test);
-    displcompile->raise();
-
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(2*ve.size());
+    ui->progressBar->setValue(0);
+    ui->progressBar->show();
 
     for(int x = 0; x < ve.size(); x++)
     {
         QString compDisp = ve[x].getName() + ".cpp Compiling...";
-        displcompile->addTextToBox(compDisp);
-        displcompile->update();
-        displcompile ->show();
+        ui->statusLabel->setText(compDisp);
+        ui->progressBar->setValue(x+1);
         QString compFile = fDir + "/" + dirName[x+2];
         ve[x].compile(compFile);
     }
-    QString l = "-----";
-    displcompile->addTextToBox(l);
-    QString nest = "Executing";
-    displcompile->addTextToBox(nest);
 
     for(int x = 0; x < ve.size(); x++)
     {
         QString execDisp = ve[x].getName() + ".exe Executing...";
-        displcompile->addTextToBox(execDisp);
-        displcompile->update();
-        displcompile ->show();
+        ui->statusLabel->setText(execDisp);
+        ui->progressBar->setValue(x+1+ve.size());
         QString timeHolder;
         ve[x].execute(testcase,exectime);
         qDebug() << ve[x].getFailReason();

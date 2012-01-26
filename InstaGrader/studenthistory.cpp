@@ -19,18 +19,16 @@ studenthistory::~studenthistory()
 {
     delete ui;
 }
-/*
-void studenthistory::on_listView_activated(const QModelIndex &index)
-{
-    tablecommonstudent = new commontable;
-    tablecommonstudent -> show();
-    QString name = index.data().toString();
-}
-*/
+
 void studenthistory::on_openpushButton_clicked()
 {
     QModelIndex index = ui->listView->selectionModel()->currentIndex();
     QString name = index.data().toString();
     tablecommonstudent = new commontable;
     tablecommonstudent -> show();
+}
+
+void studenthistory::on_closeButton_clicked()
+{
+    close();
 }

@@ -19,6 +19,9 @@ public:
 
     ~Results();
     
+private slots:
+    void on_CreateQuizCancelbutton_clicked();
+
 private:
     Ui::Results *ui;
     QSqlQueryModel *model;

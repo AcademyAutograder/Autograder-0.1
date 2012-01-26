@@ -32,7 +32,7 @@ void StudentDB::deleteStudent(QString &studentName)
    QStringList quiz = getQuizzes();
    for(int i = 0; i < quiz.length(); i++)
    {
-       QString del = "DELETE FROM " + quiz.at(i) + "WHERE studentname='" + studentName +"'";
+       QString del = "DELETE FROM " + quiz.at(i) + " WHERE studentname='" + studentName +"'";
        query.exec(del);
    }
 }

@@ -5,7 +5,7 @@
 #include <QStringListModel>
 #include <QFileSystemModel>
 #include "studentdb.h"
-#include "compiledisp.h"
+
 
 
 namespace Ui {
@@ -41,13 +41,12 @@ private slots:
 
     void on_EnterNamelineedit_textEdited(const QString &arg1);
 
+    void on_exectimeLineEdit_textChanged(const QString &arg1);
+
 private:
     QString dir, testcase, ans, quizName;
     StudentDB database;
     int exectime; //available only after pressing gradebutton
-    compiledisp *displcompile;
-
-
 
 };
 

@@ -5,25 +5,12 @@
 #include "createnewquiz.h"
 #include "editclass.h"
 #include "results.h"
-#include "displaytable.h"
-
-
-#include "studentdb.h"
-
-
-
-//#include "studentdb.h"
-
-#include "studenthistory.h"
-#include "quizhistorywindow.h"
-
-
-
 #include "studentdb.h"
 #include "studenthistory.h"
 #include "quizhistorywindow.h"
-
-
+#include "studentdb.h"
+#include "studenthistory.h"
+#include "quizhistorywindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -36,7 +23,7 @@ class MainWindow : public QMainWindow
 public:
     friend MainWindow &instance();
     Ui::MainWindow *ui;
-    int grade; //0 = 9th, 1 = 10th, etc;
+    int grade;
     StudentDB database;
     QString currentQuizName;
 
@@ -51,15 +38,13 @@ private slots:
 
     void on_Homestudentlist_activated(const QModelIndex &index);
 
-    //void on_actionView_Student_Records_triggered();
-
     void on_actionOpen_triggered();
-
 
     void on_actionQuiz_History_triggered();
 
     void on_actionResults_triggered();
 
+    void on_CreateQuizCancelbutton_clicked();
 
 private:
     explicit MainWindow(QWidget *parent = 0);
@@ -67,13 +52,8 @@ private:
     CreateNewQuiz *one;
     EditClass *classedit;
     Results *resultobj;
-    DisplayTable *disptable;
-
-    //StudentDB database;
-
     studenthistory *historystudent;
     QuizHistorywindow *windowhistory;
-
 
 };
 
